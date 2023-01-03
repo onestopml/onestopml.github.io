@@ -1,0 +1,28 @@
+# Core Concepts
+<p id="readtime"></p>
+These following terms are our core concepts. Although we know data scientists/engineers
+are familiar with these concepts. However, we would like to revise to make our 
+user manual complete and clear. 
+<div class="scalize" id="fig1">
+<img src="_static/img/dashboard.jpg" class="target">
+<div class="item-point" data-top="12" data-left="29"><div><a href="#" class="toggle">a</a></div></div>
+<div class="item-point" data-top="12" data-left="36"><div><a href="#" class="toggle">b</a></div></div>
+<div class="item-point" data-top="12" data-left="43"><div><a href="#" class="toggle">c</a></div></div>
+<div class="item-point" data-top="12" data-left="49"><div><a href="#" class="toggle">d</a></div></div>
+<div class="caption"><span>Figure 1. Renex welcome page</span> <a class="headerlink" href="#fig1" title="Permalink to this image">#</a></p></div>
+</div>
+
+
+## Datasets
+A dataset contains main samples. Each sample contains annotations and predictions. 
+Each user can have multiple datasets and manage permission for each dataset. There 
+are two ways to work with datasets. One is to use our web application with rich user experience. To access user's 
+datasets, click the menu "datasets" as shown in [Figure 1a](#fig1). 
+Another is to use our SDK/CLI (refer to [this](sdkcli/datasets/index.html))
+## Workspaces 
+Workspace is a place for users to view a datasets. In there, we support a lot of visual tools to help users
+do analysis as quick as possible. Like datasets, we support two ways to work with: via web application
+and via SDK/CLI. To access user's workspace on the web application, 
+click the menu "workspaces" as shown in [Figure 1b](#fig1). 
+## Models 
+## Experiments 

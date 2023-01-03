@@ -1,0 +1,97 @@
+# Working with Datasets
+<p id="readtime"></p>
+Each user can manage their datasets which they have a permission. A dataset
+contains main samples. Each sample contains annotations and predictions. To start, we do:
+
+```python
+import renex
+import logging
+import pprint 
+pp = pprint.PrettyPrinter(indent=4)
+
+logging.getLogger('renex').setLevel(logging.INFO)
+
+renex.init(username='####', password='####', host='http://renex.smart-data.ml')
+```
+
+## List datasets
+The object `renex.datasets` contains all of your datasets. It is a dictionary-like object, hence
+we can get walk-through as following:
+
+````{tab} Python
+```python
+print('Number of datasets:', len(renex.datasets))
+for did, ds in renex.datasets.items():
+    print('=' * 40)
+    print('did', did)
+    print(ds.json())
+```
+
+````
+
+````{tab} CLI
+```bash
+We will support later
+```
+
+````
+
+## Get dataset by ID
+````{tab} Python
+```python
+dataset_id = '629a55449f3b0a81e0e53c6f'
+ds = renex.datasets[dataset_id]
+
+# The dataset was not fully loaded, so the display name is None here.
+ds
+
+# Query the display name and all other info will be loaded together.
+ds.display_name
+
+# Modify the display name, and push().
+new_display_name = ds.display_name + '1'
+ds.display_name = new_display_name
+ds.push()
+
+# Force pull to check whether the display name was really updated.
+ds.pull(force=True)
+assert ds.display_name == new_display_name
+
+```
+
+````
+
+````{tab} CLI
+```bash
+We will support later
+```
+
+````
+
+## Create a new dataset
+````{tab} Python
+```python
+ds01 = renex.Dataset(display_name='ds01')
+ds01.push()
+ds01.id
+
+# force pull to update dataset collection
+renex.datasets.pull(force=True)
+
+# working on the newly created dataset
+ds = renex.datasets[ds01.id]
+```
+
+````
+
+````{tab} CLI
+```bash
+We will support later
+```
+
+````
+
+```{toctree}
+:hidden:
+reference
+```

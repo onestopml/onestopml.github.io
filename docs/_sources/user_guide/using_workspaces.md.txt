@@ -1,0 +1,29 @@
+# Using Workspaces
+<p id="readtime"></p>
+
+A user can have multiple workspaces to work on different datasets at the same time. Each workspace
+will be associated with the only dataset, but a dataset could be attached to different workspaces, in case
+the user wants to work on different views (filters, sorting, etc) of the same dataset.
+## Create workspace 
+To create a new workspace, go to menu "Workspaces" and click the button “Create” as follows:
+
+<div class="scalize" id="img1">
+<img src="../_static/img/workspaces.jpg" class="target">
+<div class="item-point" data-top="77" data-left="12.5"><div><a href="#" class="toggle"></a></div></div>
+</div>
+
+Then, a popup dialog is show as [Figure 1](#fig1). Fill the information as below:
+- `Name` (required) the workspace name. We accept any string including space and other special characters. 
+- `Alias` (optional) allows users create a custom url for direct access and easy remember. Keep in mind that the 
+  alias is a part of the url format, hence it must follow the url format, e.g. must not contain `/` character. 
+- `Dataset` (required) specifies which dataset we want to work in this workspace. All datasets which have at least
+  a `view` permission will be shown in the dropdown list. 
+- `Description` allows users take some notes in the workspace
+
+<div class="scalize" id="fig1">
+<img src="../_static/img/dialog_create_ws.jpg" class="target">
+<div class="caption"><span>Figure 1. Create workspace dialog</span> <a class="headerlink" href="#fig1" title="Permalink to this image">#</a></p></div>
+</div>
+
+After filling the information, click "Confirm" button to confirm. Then, the workspace will be created. Please
+give us a few seconds to initialize the workspace. 

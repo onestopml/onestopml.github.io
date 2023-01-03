@@ -1,0 +1,84 @@
+# Using Datasets
+<p id="readtime"></p>
+This page is about how to use and manage datasets.
+
+## Create dataset
+To create a new dataset, go to menu "Datasets" on the top of the webpage and click "Create" as follows:
+
+<div class="scalize" id="img1">
+<img src="../_static/img/create_ds.jpg" class="target">
+<div class="item-point" data-top="71" data-left="12"><div><a href="#" class="toggle"></a></div></div>
+</div>
+
+Then, a popup dialog is show as [Figure 1](#fig1). Fill the information as below:
+- `Name` (required): the dataset name. We accept any string including space and other special characters. 
+- `Revision` (optional): the revision of the dataset. It is useful for users to maintain and manage the 
+   version of the dataset.
+- `Media Type`: by default it will be `image`. Other option is `video`.
+- `Classes` (optional) defines fields in the datasets. A field can be used for annotations or predictions. 
+   For example, we have `annotation_group_a` which is annotation from group A, `annotation_group_b` which 
+   is from group B, and `prediction_model_x` which is from prediction from model X, and `predictin_model_y`
+   which is from model Y prediction. Different fields may different list of class names. 
+- `Class Indexing` (optional) defines mappings from integer values to labels. This is useful when the outputs of 
+   the different model are integer and different. Let's say `prediction_model_x` has mapped `0` to `cat`, but
+   `predictin_model_y` has mapped `0` to `dog`, and so on. 
+- `Info` (optional) allows us to add more additional information such as `batch_id`, `environment_id`, `date_collect`, etc. 
+   It is useful for management and organizing meta information of the dataset in a structural way. 
+
+<div class="scalize" id="fig1">
+<img src="../_static/img/dialog_ds.jpg" class="target">
+<div class="caption"><span>Figure 1. Create dataset dialog</span> <a class="headerlink" href="#fig1" title="Permalink to this image">#</a></p></div>
+</div>
+
+After filling the information, click "Create" button to confirm. 
+## Import dataset
+To create a new dataset by importing an archive from a specific format, go to menu "Datasets" and click the
+button "Import" as follows:
+
+<div class="scalize" id="img2">
+<img src="../_static/img/create_ds.jpg" class="target">
+<div class="item-point" data-top="71" data-left="26"><div><a href="#" class="toggle"></a></div></div>
+</div>
+
+Here it requires to upload an archive file such as *.zip, *.tar, *.tar.gz with the content following Renex, CVAT and COCO format.
+
+### CVAT - Image format
+1. In the archive file, we must have the one of the following content:
+   1. a directory name “images” only, containing all images, possibly distributed in sub-directories. This could be used for uploading *unlabeled datasets*.
+      <div class="scalize" id="import_cvat_images">
+      <img src="../_static/img/import_cvat_images.png" class="target">
+      </div>
+   2. a directory name “images”, containing all images; and a file name “annotations.xml” containing the annotations, could be both ground-truth and model predictions.
+      <div class="scalize" id="import_cvat_images2">
+      <img src="../_static/img/import_cvat_images2.png" class="target">
+      </div>
+   3. A directory with the same name as the archive file’s basename; and containing the content as in (1.2).
+2. The annotation follows the <i>Extended CVAT</i> format, which is mostly based on CVAT format v1.1 [here](https://openvinotoolkit.github.io/cvat/docs/manual/advanced/xml_format)
+3. The extended format further:
+   1. Supports single label (tag <label>) and multiple labels (tag <multilabel>) for an image. For example:
+      ```xml
+      <image>
+         <label label="home"></label>
+         <multilabel label="A"></multilabel>
+         <multilabel label="B"></multilabel>
+      </image>
+      ```
+   2. Support additional, arbitrary attributes (tag <attribute>) for an image. For example:
+      ```xml
+      <image>
+         <attribute name="eval_tp">3</attribute>
+         <attribute name="eval_fp">0</attribute>
+         <attribute name="eval_fn">1.0</attribute>
+      </image>
+      ```
+
+### CVAT - Video format
+### COCO format
+1.	After extracting the archive file, we must obtain the one of the following content:
+   1.	a directory name “images”, containing all images; and a file name “annotations.json” containing the annotations, could be both ground-truth and model predictions.
+      <div class="scalize" id="import_coco_images">
+      <img src="../_static/img/import_coco_images.png" class="target">
+      </div>
+   2. A directory with the same name as the archive file’s basename; and containing the content as in (1.1).
+2.	The annotation follows the COCO format: https://cocodataset.org/#format-data
+

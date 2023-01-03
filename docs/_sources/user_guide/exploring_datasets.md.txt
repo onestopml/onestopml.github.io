@@ -1,0 +1,7 @@
+# Exploring Datasets
+In a workspace, we can explore the dataset in different ways. 
+## Filter by labels
+## Filter by query
+We can filter our dataset by using queries. For more detail, please refer to [smart query user guide](smart_query.html)
+## Navigate views 
+## Coloring annotations

@@ -1,0 +1,486 @@
+<!doctype html>
+<html class="no-js">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <meta property="article:modified_time" content="2022-08-02T07:08:53+00:00" /><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Workspaces Reference" href="reference.html" /><link rel="prev" title="Models Reference" href="../models/reference.html" />
+
+    <meta name="generator" content="sphinx-4.5.0, furo 2022.06.21"/>
+        <title>Working with Workspaces - Renex 1.0.8</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/readtime.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/scalize.css" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../index.html"><div class="brand">Renex 1.0.8</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../index.html">
+  
+  
+  <span class="sidebar-brand-text">Renex 1.0.8</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
+  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../release.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../concepts.html">Core Concepts</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../user_guide/index.html">User Guide</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../user_guide/using_datasets.html">Using Datasets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../user_guide/using_workspaces.html">Using Workspaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../user_guide/exploring_datasets.html">Exploring Datasets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../user_guide/smart_query.html">Smart Query</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../use_cases/index.html">Use Cases</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">SDK/CLI Reference</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../quickstart.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic.html">Basic Usage</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../datasets/index.html">Working with Datasets</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../datasets/reference.html">Datasets Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../models/index.html">Working with Models</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../models/reference.html">Models Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current has-children current-page"><a class="current reference internal" href="#">Working with Workspaces</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="reference.html">Workspaces Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/index.html">Advanced Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">License</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          
+                <div id="readtime_value" style="display:none">11 min</div>
+              <section id="working-with-workspaces">
+<h1>Working with Workspaces<a class="headerlink" href="#working-with-workspaces" title="Permalink to this headline">#</a></h1>
+<p>Workspace is a place for users to view a datasets. In there, we support a lot of visual tools to help users
+do analysis as quick as possible.</p>
+<section id="create-a-new-workspace">
+<h2>Create a new workspace<a class="headerlink" href="#create-a-new-workspace" title="Permalink to this headline">#</a></h2>
+<p>To create a new workspace, we create a <code class="docutils literal notranslate"><span class="pre">Workspace</span></code> object and call <code class="docutils literal notranslate"><span class="pre">push</span></code> to commit your command.
+We can change any field value before <code class="docutils literal notranslate"><span class="pre">push</span></code> as line 11-13 shown</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">renex</span>
+<span class="linenos"> 2</span><span class="kn">from</span> <span class="nn">renex</span> <span class="kn">import</span> <span class="n">Workspace</span>
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;We have </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">renex</span><span class="o">.</span><span class="n">datasets</span><span class="p">)</span><span class="si">}</span><span class="s1"> dataset(s)&#39;</span><span class="p">)</span>
+<span class="linenos"> 5</span><span class="n">did</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">renex</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">keys</span><span class="p">())[</span><span class="mi">0</span><span class="p">]</span>
+<span class="linenos"> 6</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;We choose dataset id=</span><span class="si">{</span><span class="n">did</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="linenos"> 7</span>
+<span class="linenos"> 8</span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;We created a new workspace with a few information&#39;</span><span class="p">)</span>
+<span class="linenos"> 9</span><span class="n">new_ws</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
+<span class="linenos">10</span>
+<span class="linenos">11</span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;We can change description or anything before pushing&#39;</span><span class="p">)</span>
+<span class="linenos">12</span><span class="n">new_ws</span><span class="o">.</span><span class="n">description</span> <span class="o">=</span> <span class="s1">&#39;This is a test workspace&#39;</span>
+<span class="linenos">13</span><span class="n">new_ws</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
+<span class="linenos">14</span>
+<span class="linenos">15</span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Now, we commit to push to server&#39;</span><span class="p">)</span>
+<span class="linenos">16</span><span class="n">new_ws</span><span class="o">.</span><span class="n">push</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--0-input--2" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--2">CLI</label><div class="tab-content docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>We<span class="w"> </span>will<span class="w"> </span>support<span class="w"> </span>later
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="list-all-of-your-workspaces">
+<h2>List all of your workspaces<a class="headerlink" href="#list-all-of-your-workspaces" title="Permalink to this headline">#</a></h2>
+<p>The object <code class="docutils literal notranslate"><span class="pre">renex.workspaces</span></code> contains all of your workspaces. It is a dictionary-like object, hence
+we can get walk-through as following:</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--1-input--1" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">import</span> <span class="nn">renex</span>
+<span class="linenos">2</span>
+<span class="linenos">3</span><span class="k">for</span> <span class="n">wid</span><span class="p">,</span> <span class="n">ws</span> <span class="ow">in</span> <span class="n">renex</span><span class="o">.</span><span class="n">workspaces</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+<span class="linenos">4</span>    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-&#39;</span> <span class="o">*</span> <span class="mi">50</span><span class="p">)</span>
+<span class="linenos">5</span>    <span class="nb">print</span><span class="p">(</span><span class="n">wid</span><span class="p">,</span> <span class="n">ws</span><span class="p">)</span>
+<span class="linenos">6</span>    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-&#39;</span> <span class="o">*</span> <span class="mi">50</span><span class="p">)</span>
+<span class="linenos">7</span>    <span class="n">ws</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--1-input--2" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--2">CLI</label><div class="tab-content docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>We<span class="w"> </span>will<span class="w"> </span>support<span class="w"> </span>later
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">summary</span></code> method at line 7 is useful for take a quick look on a workspace with a pretty format.</p>
+</section>
+<section id="get-an-existed-workspace">
+<h2>Get an existed workspace<a class="headerlink" href="#get-an-existed-workspace" title="Permalink to this headline">#</a></h2>
+<p>The object <code class="docutils literal notranslate"><span class="pre">renex.workspaces</span></code> is a dictionary-like object with key is the ID of the workspace, hence we
+can get an existed workspace via this object.
+Another way is to create a <code class="docutils literal notranslate"><span class="pre">Workspace</span></code> object provided with an existed ID as following:</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--2-input--1" name="tab-set--2" type="radio"><label class="tab-label" for="tab-set--2-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">from</span> <span class="nn">renex</span> <span class="kn">import</span> <span class="n">Workspace</span>
+<span class="linenos">2</span>
+<span class="linenos">3</span><span class="n">ws</span> <span class="o">=</span> <span class="n">Workspace</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s1">&#39;3&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--2-input--2" name="tab-set--2" type="radio"><label class="tab-label" for="tab-set--2-input--2">CLI</label><div class="tab-content docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>We<span class="w"> </span>will<span class="w"> </span>support<span class="w"> </span>later
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note that, we will support get workspace by alias later.</p>
+</section>
+<section id="work-with-workspace-permissions">
+<h2>Work with workspace permissions<a class="headerlink" href="#work-with-workspace-permissions" title="Permalink to this headline">#</a></h2>
+<p>A workspace can be shared with other user or a group as we called them as an actor. Each actor has a scope
+per workspace. We now support several scope as defined in the <code class="docutils literal notranslate"><span class="pre">WorkspacePermitScope</span></code> enum in <code class="docutils literal notranslate"><span class="pre">renex.core.workspace</span></code>.
+We have three types of actor, that are <code class="docutils literal notranslate"><span class="pre">user</span></code>, <code class="docutils literal notranslate"><span class="pre">group</span></code>, and <code class="docutils literal notranslate"><span class="pre">public</span></code> which is defined in the
+<code class="docutils literal notranslate"><span class="pre">WorkspacePermitType</span></code> enum in <code class="docutils literal notranslate"><span class="pre">renex.core.workspace</span></code>.</p>
+<section id="get-workspace-permissions">
+<h3>Get workspace permissions<a class="headerlink" href="#get-workspace-permissions" title="Permalink to this headline">#</a></h3>
+<p>To get workspace permissions, we can access via <code class="docutils literal notranslate"><span class="pre">permissions</span></code> field in the <code class="docutils literal notranslate"><span class="pre">Workspace</span></code> object as following:</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--3-input--1" name="tab-set--3" type="radio"><label class="tab-label" for="tab-set--3-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">for</span> <span class="n">wid</span><span class="p">,</span> <span class="n">ws</span> <span class="ow">in</span> <span class="n">renex</span><span class="o">.</span><span class="n">workspaces</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+<span class="linenos">2</span>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">wid</span><span class="si">}</span><span class="s1">: </span><span class="si">{</span><span class="n">ws</span><span class="o">.</span><span class="n">permissions</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="linenos">3</span>    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Now the summary has permission information&#39;</span><span class="p">)</span>
+<span class="linenos">4</span>    <span class="n">ws</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--3-input--2" name="tab-set--3" type="radio"><label class="tab-label" for="tab-set--3-input--2">CLI</label><div class="tab-content docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>We<span class="w"> </span>will<span class="w"> </span>support<span class="w"> </span>later
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note that when we access to the <code class="docutils literal notranslate"><span class="pre">permissions</span></code> field, it will communicate with the server to get the information.
+This action takes an extra time, hence we do not fetch in advance when creating the <code class="docutils literal notranslate"><span class="pre">Workspace</span></code> object.
+We only fetch when we access the <code class="docutils literal notranslate"><span class="pre">permissions</span></code> field.</p>
+</section>
+<section id="update-workspace-permissions">
+<h3>Update workspace permissions<a class="headerlink" href="#update-workspace-permissions" title="Permalink to this headline">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">permissions</span></code> is a dictionary-like object with key is a combination between type of actor and actor name.
+The value of this dictionary is the scope.</p>
+<p>We can update as following:</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--4-input--1" name="tab-set--4" type="radio"><label class="tab-label" for="tab-set--4-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">from</span> <span class="nn">renex</span> <span class="kn">import</span> <span class="n">Workspace</span>
+<span class="linenos">2</span><span class="kn">from</span> <span class="nn">renex.core.workspace</span> <span class="kn">import</span> <span class="n">WorkspacePermitType</span><span class="p">,</span> <span class="n">WorkspacePermitScope</span>
+<span class="linenos">3</span>
+<span class="linenos">4</span><span class="n">ws</span> <span class="o">=</span> <span class="n">Workspace</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s1">&#39;3&#39;</span><span class="p">)</span>
+<span class="linenos">5</span><span class="n">ws</span><span class="o">.</span><span class="n">permissions</span><span class="p">[(</span><span class="n">WorkspacePermitType</span><span class="o">.</span><span class="n">group</span><span class="p">,</span> <span class="s1">&#39;vinai&#39;</span><span class="p">)]</span> <span class="o">=</span> <span class="n">WorkspacePermitScope</span><span class="o">.</span><span class="n">view</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Or, we can update using string format <code class="docutils literal notranslate"><span class="pre">{actor_type}:{actor_name}</span></code> as following:</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--5-input--1" name="tab-set--5" type="radio"><label class="tab-label" for="tab-set--5-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">from</span> <span class="nn">renex</span> <span class="kn">import</span> <span class="n">Workspace</span>
+<span class="linenos">2</span><span class="n">ws</span> <span class="o">=</span> <span class="n">Workspace</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s1">&#39;3&#39;</span><span class="p">)</span>
+<span class="linenos">3</span><span class="n">ws</span><span class="o">.</span><span class="n">permissions</span><span class="p">[</span><span class="s1">&#39;group:vinai&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;view&#39;</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--5-input--2" name="tab-set--5" type="radio"><label class="tab-label" for="tab-set--5-input--2">CLI</label><div class="tab-content docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>We<span class="w"> </span>will<span class="w"> </span>support<span class="w"> </span>later
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="delete-an-existed-workspace">
+<h2>Delete an existed workspace<a class="headerlink" href="#delete-an-existed-workspace" title="Permalink to this headline">#</a></h2>
+<p>When we do not use the workspace anymore, we can delete it to make your space is clean. To delete, we call
+<code class="docutils literal notranslate"><span class="pre">delete</span></code> method as following:</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--6-input--1" name="tab-set--6" type="radio"><label class="tab-label" for="tab-set--6-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">from</span> <span class="nn">renex</span> <span class="kn">import</span> <span class="n">Workspace</span>
+<span class="linenos">2</span>
+<span class="linenos">3</span><span class="n">ws</span> <span class="o">=</span> <span class="n">Workspace</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s1">&#39;3&#39;</span><span class="p">)</span>
+<span class="linenos">4</span><span class="n">ws</span><span class="o">.</span><span class="n">delete</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--6-input--2" name="tab-set--6" type="radio"><label class="tab-label" for="tab-set--6-input--2">CLI</label><div class="tab-content docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>We<span class="w"> </span>will<span class="w"> </span>support<span class="w"> </span>later
+</pre></div>
+</div>
+</div>
+</div>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+</section>
+
+          
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="reference.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Workspaces Reference</div>
+              </div>
+              <svg><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="../models/reference.html">
+              <svg><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Models Reference</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2022, PlatformX
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            <div class="last-updated">
+              Last updated on Aug 02, 2022</div>
+          </div>
+          <div class="right-details">
+            <div class="icons">
+              
+            </div>
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            Contents
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Working with Workspaces</a><ul>
+<li><a class="reference internal" href="#create-a-new-workspace">Create a new workspace</a></li>
+<li><a class="reference internal" href="#list-all-of-your-workspaces">List all of your workspaces</a></li>
+<li><a class="reference internal" href="#get-an-existed-workspace">Get an existed workspace</a></li>
+<li><a class="reference internal" href="#work-with-workspace-permissions">Work with workspace permissions</a><ul>
+<li><a class="reference internal" href="#get-workspace-permissions">Get workspace permissions</a></li>
+<li><a class="reference internal" href="#update-workspace-permissions">Update workspace permissions</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#delete-an-existed-workspace">Delete an existed workspace</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/scripts/furo.js"></script>
+    <script src="../../_static/tabs.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/js/readtime.js"></script>
+    <script src="../../_static/js/scalize.js"></script>
+    <script src="../../_static/js/annotate.js"></script>
+    </body>
+</html>

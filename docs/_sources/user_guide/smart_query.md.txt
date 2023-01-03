@@ -1,0 +1,14 @@
+# Smart Query
+With smart query, we have a lot of advanced ways to filter and select samples in our dataset.
+## Query Bar
+To query samples with some specific conditions, go to "Query bar" (as shown in [Figure 1a](#fig1)) 
+and type some query conditions in Renex query format. 
+The "Query bar" are integrated with autocomplete feature which suggests relevant query strings 
+as shown in [Figure 1b](#fig1)
+
+<div class="scalize" id="fig1">
+<img src="../_static/img/smart_query.jpg" class="target">
+<div class="item-point" data-top="33" data-left="15"><div><a href="#" class="toggle">a</a></div></div>
+<div class="item-point" data-top="70" data-left="18"><div><a href="#" class="toggle">b</a></div></div>
+<div class="caption"><span>Figure 1. Renex query bar</span> <a class="headerlink" href="#fig1" title="Permalink to this image">#</a></p></div>
+</div>

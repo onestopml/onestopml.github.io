@@ -1,0 +1,36 @@
+Welcome to Renex
+================
+
+**Renex stands for Refining X - data and models**
+
+- **data visualization** to see and understand outliers and patterns in data
+- **data exploration** to better understand the nature of the data
+- **model evaluation & debugging** to help data scientists/engineers improve their models
+- **fully integrated** with the data annotation service
+
+*Renex platform speeds up the continuous improvement process for data quality and model performance*
+
+
+
+.. toctree::
+    :hidden:
+
+    overview
+    release
+    concepts
+    user_guide/index
+    use_cases/index
+
+.. toctree::
+    :caption: SDK/CLI Reference
+    :hidden:
+
+    sdkcli/quickstart
+    sdkcli/basic
+    sdkcli/datasets/index
+    sdkcli/models/index
+    sdkcli/workspaces/index
+    sdkcli/advanced/index
+    sdkcli/changelog
+    sdkcli/license
+

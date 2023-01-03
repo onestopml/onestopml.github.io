@@ -1,0 +1,10 @@
+# User Guide
+
+
+```{toctree}
+:hidden:
+using_datasets
+using_workspaces
+exploring_datasets
+smart_query
+```

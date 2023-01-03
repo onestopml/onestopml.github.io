@@ -1,0 +1,7 @@
+Datasets Reference
+==================
+
+.. autoclass:: renex.Dataset
+    :members: pull, push, json, dict, to_dict
+
+

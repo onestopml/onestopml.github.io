@@ -1,0 +1,11 @@
+# Overview
+<p id="readtime"></p>
+Data is the most important thing for training & fine-tuning machine learning models. Poor quality of data
+can make models perform worse. Moreover, understanding model prediction errors helps
+model developers improve accuracy significantly. Jupyter Labs/Notebooks are common
+tools for research to analyze and investigate model performance. However, these tools
+are not designed for these tasks, making time-consuming and inefficient. 
+
+Renex is a right tool for us to visualize and explore our data. This helps data scientists/engineers
+boost their model performance. Also, Renex is fully integrated with annotation service,
+helping continuous data improvement pipelines run smoothly with a single click. 

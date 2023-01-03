@@ -1,0 +1,165 @@
+# Working with Workspaces
+Workspace is a place for users to view a datasets. In there, we support a lot of visual tools to help users
+do analysis as quick as possible. 
+
+## Create a new workspace
+To create a new workspace, we create a `Workspace` object and call `push` to commit your command. 
+We can change any field value before `push` as line 11-13 shown
+````{tab} Python
+```python
+import renex
+from renex import Workspace
+
+print(f'We have {len(renex.datasets)} dataset(s)')
+did = list(renex.datasets.keys())[0]
+print(f'We choose dataset id={did}')
+
+print('We created a new workspace with a few information')
+new_ws.summary()
+
+print('We can change description or anything before pushing')
+new_ws.description = 'This is a test workspace'
+new_ws.summary()
+
+print('Now, we commit to push to server')
+new_ws.push()
+```
+
+````
+
+````{tab} CLI
+```bash
+We will support later
+```
+
+````
+
+## List all of your workspaces
+The object `renex.workspaces` contains all of your workspaces. It is a dictionary-like object, hence
+we can get walk-through as following:
+````{tab} Python
+```python
+import renex
+
+for wid, ws in renex.workspaces.items():
+    print('-' * 50)
+    print(wid, ws)
+    print('-' * 50)
+    ws.summary()
+```
+
+````
+
+````{tab} CLI
+```bash
+We will support later
+```
+
+````
+The `summary` method at line 7 is useful for take a quick look on a workspace with a pretty format. 
+
+## Get an existed workspace
+The object `renex.workspaces` is a dictionary-like object with key is the ID of the workspace, hence we
+can get an existed workspace via this object. 
+Another way is to create a `Workspace` object provided with an existed ID as following:
+````{tab} Python
+```python
+from renex import Workspace
+
+ws = Workspace(id='3')
+```
+
+````
+
+````{tab} CLI
+```bash
+We will support later
+```
+
+````
+Note that, we will support get workspace by alias later. 
+
+## Work with workspace permissions
+A workspace can be shared with other user or a group as we called them as an actor. Each actor has a scope
+per workspace. We now support several scope as defined in the `WorkspacePermitScope` enum in `renex.core.workspace`. 
+We have three types of actor, that are `user`, `group`, and `public` which is defined in the
+`WorkspacePermitType` enum in `renex.core.workspace`. 
+
+### Get workspace permissions
+To get workspace permissions, we can access via `permissions` field in the `Workspace` object as following:
+````{tab} Python
+```python
+for wid, ws in renex.workspaces.items():
+    print(f'{wid}: {ws.permissions}')
+    print('Now the summary has permission information')
+    ws.summary()
+```
+
+````
+
+````{tab} CLI
+```bash
+We will support later
+```
+
+````
+Note that when we access to the `permissions` field, it will communicate with the server to get the information.
+This action takes an extra time, hence we do not fetch in advance when creating the `Workspace` object.
+We only fetch when we access the `permissions` field.
+### Update workspace permissions
+The `permissions` is a dictionary-like object with key is a combination between type of actor and actor name.
+The value of this dictionary is the scope. 
+
+We can update as following:
+````{tab} Python
+```python
+from renex import Workspace
+from renex.core.workspace import WorkspacePermitType, WorkspacePermitScope
+
+ws = Workspace(id='3')
+ws.permissions[(WorkspacePermitType.group, 'vinai')] = WorkspacePermitScope.view
+```
+````
+
+Or, we can update using string format `{actor_type}:{actor_name}` as following:
+````{tab} Python
+```python
+from renex import Workspace
+ws = Workspace(id='3')
+ws.permissions['group:vinai'] = 'view'
+```
+
+````
+
+````{tab} CLI
+```bash
+We will support later
+```
+
+````
+
+## Delete an existed workspace
+When we do not use the workspace anymore, we can delete it to make your space is clean. To delete, we call
+`delete` method as following:
+````{tab} Python
+```python
+from renex import Workspace
+
+ws = Workspace(id='3')
+ws.delete()
+```
+
+````
+
+````{tab} CLI
+```bash
+We will support later
+```
+
+````
+
+```{toctree}
+:hidden:
+reference
+```
+

@@ -1,0 +1,35 @@
+# Quick Start
+
+This tutorial will give you a quick tour of Renex’s features.
+To get started, we’ll start by installing Renex.
+Most of the examples in this guide are based on Python,
+but we’ll also show you how to use Renex in command line interface
+
+
+## Installation
+
+You can install the latest official version of Renex as follows.
+```bash
+pip install -U https://renex.smart-data.ml/dist/renex-0.0.1-py3-none-any.whl
+```
+```{admonition} Supported Python versions
+:class: note
+
+Currently, we are supporting Python versions >= 3.6. Please let us know if you want us support older versions. 
+```
+## Starting Renex
+````{tab} Python
+```python
+import renex
+renex.init(...)
+```
+
+````
+
+````{tab} CLI
+```bash
+We will support later
+```
+
+````
+
