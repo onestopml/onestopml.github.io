@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <meta property="article:modified_time" content="2022-08-02T07:08:53+00:00" /><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Workspaces Reference" href="reference.html" /><link rel="prev" title="Models Reference" href="../models/reference.html" />
+    <meta property="article:modified_time" content="2023-01-10T08:49:51+00:00" /><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Workspaces Reference" href="reference.html" /><link rel="prev" title="Models Reference" href="../models/reference.html" />
 
     <meta name="generator" content="sphinx-4.5.0, furo 2022.06.21"/>
         <title>Working with Workspaces - Renex 1.0.8</title>
@@ -345,7 +345,7 @@ The value of this dictionary is the scope.</p>
 <span class="linenos">2</span><span class="kn">from</span> <span class="nn">renex.core.workspace</span> <span class="kn">import</span> <span class="n">WorkspacePermitType</span><span class="p">,</span> <span class="n">WorkspacePermitScope</span>
 <span class="linenos">3</span>
 <span class="linenos">4</span><span class="n">ws</span> <span class="o">=</span> <span class="n">Workspace</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s1">&#39;3&#39;</span><span class="p">)</span>
-<span class="linenos">5</span><span class="n">ws</span><span class="o">.</span><span class="n">permissions</span><span class="p">[(</span><span class="n">WorkspacePermitType</span><span class="o">.</span><span class="n">group</span><span class="p">,</span> <span class="s1">&#39;vinai&#39;</span><span class="p">)]</span> <span class="o">=</span> <span class="n">WorkspacePermitScope</span><span class="o">.</span><span class="n">view</span>
+<span class="linenos">5</span><span class="n">ws</span><span class="o">.</span><span class="n">permissions</span><span class="p">[(</span><span class="n">WorkspacePermitType</span><span class="o">.</span><span class="n">group</span><span class="p">,</span> <span class="s1">&#39;renex&#39;</span><span class="p">)]</span> <span class="o">=</span> <span class="n">WorkspacePermitScope</span><span class="o">.</span><span class="n">view</span>
 </pre></div>
 </div>
 </div>
@@ -355,7 +355,7 @@ The value of this dictionary is the scope.</p>
 <input checked="True" class="tab-input" id="tab-set--5-input--1" name="tab-set--5" type="radio"><label class="tab-label" for="tab-set--5-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">from</span> <span class="nn">renex</span> <span class="kn">import</span> <span class="n">Workspace</span>
 <span class="linenos">2</span><span class="n">ws</span> <span class="o">=</span> <span class="n">Workspace</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s1">&#39;3&#39;</span><span class="p">)</span>
-<span class="linenos">3</span><span class="n">ws</span><span class="o">.</span><span class="n">permissions</span><span class="p">[</span><span class="s1">&#39;group:vinai&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;view&#39;</span>
+<span class="linenos">3</span><span class="n">ws</span><span class="o">.</span><span class="n">permissions</span><span class="p">[</span><span class="s1">&#39;group:renex&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;view&#39;</span>
 </pre></div>
 </div>
 </div>
@@ -421,13 +421,13 @@ The value of this dictionary is the scope.</p>
         <div class="bottom-of-page">
           <div class="left-details">
             <div class="copyright">
-                Copyright &#169; 2022, PlatformX
+                Copyright &#169; 2022, VinAI
             </div>
             Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
             
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Aug 02, 2022</div>
+              Last updated on Jan 10, 2023</div>
           </div>
           <div class="right-details">
             <div class="icons">

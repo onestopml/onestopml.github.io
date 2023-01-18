@@ -117,7 +117,7 @@ from renex import Workspace
 from renex.core.workspace import WorkspacePermitType, WorkspacePermitScope
 
 ws = Workspace(id='3')
-ws.permissions[(WorkspacePermitType.group, 'vinai')] = WorkspacePermitScope.view
+ws.permissions[(WorkspacePermitType.group, 'renex')] = WorkspacePermitScope.view
 ```
 ````
 
@@ -126,7 +126,7 @@ Or, we can update using string format `{actor_type}:{actor_name}` as following:
 ```python
 from renex import Workspace
 ws = Workspace(id='3')
-ws.permissions['group:vinai'] = 'view'
+ws.permissions['group:renex'] = 'view'
 ```
 
 ````
