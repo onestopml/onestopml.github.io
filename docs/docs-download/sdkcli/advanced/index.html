@@ -3,11 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
-    <meta property="article:modified_time" content="2022-08-02T07:08:53+00:00" /><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Datasets Reference" href="reference.html" /><link rel="prev" title="Basic Usage" href="../basic.html" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Changelog" href="../changelog.html" /><link rel="prev" title="Workspaces Reference" href="../workspaces/reference.html" />
 
     <meta name="generator" content="sphinx-4.5.0, furo 2022.06.21"/>
-        <title>Working with Datasets - Renex 1.0.8</title>
+        <title>Advanced Usage - Renex 1.0.8</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
@@ -138,7 +137,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -175,8 +174,8 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../quickstart.html">Quick Start</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../basic.html">Basic Usage</a></li>
-<li class="toctree-l1 current has-children current-page"><a class="current reference internal" href="#">Working with Datasets</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="reference.html">Datasets Reference</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../datasets/index.html">Working with Datasets</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../datasets/reference.html">Datasets Reference</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../models/index.html">Working with Models</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -187,7 +186,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../workspaces/reference.html">Workspaces Reference</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../advanced/index.html">Advanced Usage</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Advanced Usage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../license.html">License</a></li>
 </ul>
@@ -217,107 +216,16 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main">
           
-                <div id="readtime_value" style="display:none">7 min</div>
-              <section id="working-with-datasets">
-<h1>Working with Datasets<a class="headerlink" href="#working-with-datasets" title="Permalink to this headline">#</a></h1>
-<p id="readtime"></p>
-Each user can manage their datasets which they have a permission. A dataset
-contains main samples. Each sample contains annotations and predictions. To start, we do:
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">import</span> <span class="nn">renex</span>
-<span class="linenos">2</span><span class="kn">import</span> <span class="nn">logging</span>
-<span class="linenos">3</span><span class="kn">import</span> <span class="nn">pprint</span> 
-<span class="linenos">4</span><span class="n">pp</span> <span class="o">=</span> <span class="n">pprint</span><span class="o">.</span><span class="n">PrettyPrinter</span><span class="p">(</span><span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
-<span class="linenos">5</span>
-<span class="linenos">6</span><span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s1">&#39;renex&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
-<span class="linenos">7</span>
-<span class="linenos">8</span><span class="n">renex</span><span class="o">.</span><span class="n">init</span><span class="p">(</span><span class="n">username</span><span class="o">=</span><span class="s1">&#39;####&#39;</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s1">&#39;####&#39;</span><span class="p">,</span> <span class="n">host</span><span class="o">=</span><span class="s1">&#39;http://renex.smart-data.ml&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-<section id="list-datasets">
-<h2>List datasets<a class="headerlink" href="#list-datasets" title="Permalink to this headline">#</a></h2>
-<p>The object <code class="docutils literal notranslate"><span class="pre">renex.datasets</span></code> contains all of your datasets. It is a dictionary-like object, hence
-we can get walk-through as following:</p>
-<div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--1">Python</label><div class="tab-content docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Number of datasets:&#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">renex</span><span class="o">.</span><span class="n">datasets</span><span class="p">))</span>
-<span class="linenos">2</span><span class="k">for</span> <span class="n">did</span><span class="p">,</span> <span class="n">ds</span> <span class="ow">in</span> <span class="n">renex</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-<span class="linenos">3</span>    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;=&#39;</span> <span class="o">*</span> <span class="mi">40</span><span class="p">)</span>
-<span class="linenos">4</span>    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;did&#39;</span><span class="p">,</span> <span class="n">did</span><span class="p">)</span>
-<span class="linenos">5</span>    <span class="nb">print</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
-</pre></div>
-</div>
-</div>
-<input class="tab-input" id="tab-set--0-input--2" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--2">CLI</label><div class="tab-content docutils container">
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>We<span class="w"> </span>will<span class="w"> </span>support<span class="w"> </span>later
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="get-dataset-by-id">
-<h2>Get dataset by ID<a class="headerlink" href="#get-dataset-by-id" title="Permalink to this headline">#</a></h2>
-<div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--1-input--1" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--1">Python</label><div class="tab-content docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="n">dataset_id</span> <span class="o">=</span> <span class="s1">&#39;629a55449f3b0a81e0e53c6f&#39;</span>
-<span class="linenos"> 2</span><span class="n">ds</span> <span class="o">=</span> <span class="n">renex</span><span class="o">.</span><span class="n">datasets</span><span class="p">[</span><span class="n">dataset_id</span><span class="p">]</span>
-<span class="linenos"> 3</span>
-<span class="linenos"> 4</span><span class="c1"># The dataset was not fully loaded, so the display name is None here.</span>
-<span class="linenos"> 5</span><span class="n">ds</span>
-<span class="linenos"> 6</span>
-<span class="linenos"> 7</span><span class="c1"># Query the display name and all other info will be loaded together.</span>
-<span class="linenos"> 8</span><span class="n">ds</span><span class="o">.</span><span class="n">display_name</span>
-<span class="linenos"> 9</span>
-<span class="linenos">10</span><span class="c1"># Modify the display name, and push().</span>
-<span class="linenos">11</span><span class="n">new_display_name</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">display_name</span> <span class="o">+</span> <span class="s1">&#39;1&#39;</span>
-<span class="linenos">12</span><span class="n">ds</span><span class="o">.</span><span class="n">display_name</span> <span class="o">=</span> <span class="n">new_display_name</span>
-<span class="linenos">13</span><span class="n">ds</span><span class="o">.</span><span class="n">push</span><span class="p">()</span>
-<span class="linenos">14</span>
-<span class="linenos">15</span><span class="c1"># Force pull to check whether the display name was really updated.</span>
-<span class="linenos">16</span><span class="n">ds</span><span class="o">.</span><span class="n">pull</span><span class="p">(</span><span class="n">force</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="linenos">17</span><span class="k">assert</span> <span class="n">ds</span><span class="o">.</span><span class="n">display_name</span> <span class="o">==</span> <span class="n">new_display_name</span>
-<span class="linenos">18</span>
-</pre></div>
-</div>
-</div>
-<input class="tab-input" id="tab-set--1-input--2" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--2">CLI</label><div class="tab-content docutils container">
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>We<span class="w"> </span>will<span class="w"> </span>support<span class="w"> </span>later
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="create-a-new-dataset">
-<h2>Create a new dataset<a class="headerlink" href="#create-a-new-dataset" title="Permalink to this headline">#</a></h2>
-<div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--2-input--1" name="tab-set--2" type="radio"><label class="tab-label" for="tab-set--2-input--1">Python</label><div class="tab-content docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">ds01</span> <span class="o">=</span> <span class="n">renex</span><span class="o">.</span><span class="n">Dataset</span><span class="p">(</span><span class="n">display_name</span><span class="o">=</span><span class="s1">&#39;ds01&#39;</span><span class="p">)</span>
-<span class="linenos">2</span><span class="n">ds01</span><span class="o">.</span><span class="n">push</span><span class="p">()</span>
-<span class="linenos">3</span><span class="n">ds01</span><span class="o">.</span><span class="n">id</span>
-<span class="linenos">4</span>
-<span class="linenos">5</span><span class="c1"># force pull to update dataset collection</span>
-<span class="linenos">6</span><span class="n">renex</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">pull</span><span class="p">(</span><span class="n">force</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="linenos">7</span>
-<span class="linenos">8</span><span class="c1"># working on the newly created dataset</span>
-<span class="linenos">9</span><span class="n">ds</span> <span class="o">=</span> <span class="n">renex</span><span class="o">.</span><span class="n">datasets</span><span class="p">[</span><span class="n">ds01</span><span class="o">.</span><span class="n">id</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<input class="tab-input" id="tab-set--2-input--2" name="tab-set--2" type="radio"><label class="tab-label" for="tab-set--2-input--2">CLI</label><div class="tab-content docutils container">
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>We<span class="w"> </span>will<span class="w"> </span>support<span class="w"> </span>later
-</pre></div>
-</div>
-</div>
-</div>
-<div class="toctree-wrapper compound">
-</div>
-</section>
+                <div id="readtime_value" style="display:none">1 min</div>
+              <section id="advanced-usage">
+<h1>Advanced Usage<a class="headerlink" href="#advanced-usage" title="Permalink to this headline">#</a></h1>
 </section>
 
           
@@ -326,23 +234,23 @@ we can get walk-through as following:</p>
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="reference.html">
+          <a class="next-page" href="../changelog.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Datasets Reference</div>
+                <div class="title">Changelog</div>
               </div>
               <svg><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="../basic.html">
+          <a class="prev-page" href="../workspaces/reference.html">
               <svg><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Basic Usage</div>
+                <div class="title">Workspaces Reference</div>
                 
               </div>
             </a>
@@ -355,8 +263,7 @@ we can get walk-through as following:</p>
             Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
             
             <a href="https://github.com/pradyunsg/furo">Furo</a>
-            <div class="last-updated">
-              Last updated on Aug 02, 2022</div>
+            
           </div>
           <div class="right-details">
             <div class="icons">
@@ -367,29 +274,8 @@ we can get walk-through as following:</p>
         
       </footer>
     </div>
-    <aside class="toc-drawer">
+    <aside class="toc-drawer no-toc">
       
-      
-      <div class="toc-sticky toc-scroll">
-        <div class="toc-title-container">
-          <span class="toc-title">
-            Contents
-          </span>
-        </div>
-        <div class="toc-tree-container">
-          <div class="toc-tree">
-            <ul>
-<li><a class="reference internal" href="#">Working with Datasets</a><ul>
-<li><a class="reference internal" href="#list-datasets">List datasets</a></li>
-<li><a class="reference internal" href="#get-dataset-by-id">Get dataset by ID</a></li>
-<li><a class="reference internal" href="#create-a-new-dataset">Create a new dataset</a></li>
-</ul>
-</li>
-</ul>
-
-          </div>
-        </div>
-      </div>
       
       
     </aside>

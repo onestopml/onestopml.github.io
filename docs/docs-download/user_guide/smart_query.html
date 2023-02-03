@@ -3,11 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
-    <meta property="article:modified_time" content="2022-08-02T07:08:53+00:00" /><link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Using Workspaces" href="using_workspaces.html" /><link rel="prev" title="User Guide" href="index.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Use Cases" href="../use_cases/index.html" /><link rel="prev" title="Exploring Datasets" href="exploring_datasets.html" />
 
     <meta name="generator" content="sphinx-4.5.0, furo 2022.06.21"/>
-        <title>Using Datasets - Renex 1.0.8</title>
+        <title>Smart Query - Renex 1.0.8</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
     <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
@@ -163,10 +162,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../release.html">Release Notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../concepts.html">Core Concepts</a></li>
 <li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">User Guide</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
-<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Using Datasets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="using_datasets.html">Using Datasets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="using_workspaces.html">Using Workspaces</a></li>
 <li class="toctree-l2"><a class="reference internal" href="exploring_datasets.html">Exploring Datasets</a></li>
-<li class="toctree-l2"><a class="reference internal" href="smart_query.html">Smart Query</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Smart Query</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../use_cases/index.html">Use Cases</a></li>
@@ -224,112 +223,22 @@
         </div>
         <article role="main">
           
-                <div id="readtime_value" style="display:none">6 min</div>
-              <section id="using-datasets">
-<h1>Using Datasets<a class="headerlink" href="#using-datasets" title="Permalink to this headline">#</a></h1>
-<p id="readtime"></p>
-This page is about how to use and manage datasets.
-<section id="create-dataset">
-<h2>Create dataset<a class="headerlink" href="#create-dataset" title="Permalink to this headline">#</a></h2>
-<p>To create a new dataset, go to menu “Datasets” on the top of the webpage and click “Create” as follows:</p>
-<div class="scalize" id="img1">
-<img src="../_static/img/create_ds.jpg" class="target">
-<div class="item-point" data-top="71" data-left="12"><div><a href="#" class="toggle"></a></div></div>
-</div>
-<p>Then, a popup dialog is show as <a class="reference external" href="#fig1">Figure 1</a>. Fill the information as below:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">Name</span></code> (required): the dataset name. We accept any string including space and other special characters.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Revision</span></code> (optional): the revision of the dataset. It is useful for users to maintain and manage the
-version of the dataset.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Media</span> <span class="pre">Type</span></code>: by default it will be <code class="docutils literal notranslate"><span class="pre">image</span></code>. Other option is <code class="docutils literal notranslate"><span class="pre">video</span></code>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Classes</span></code> (optional) defines fields in the datasets. A field can be used for annotations or predictions.
-For example, we have <code class="docutils literal notranslate"><span class="pre">annotation_group_a</span></code> which is annotation from group A, <code class="docutils literal notranslate"><span class="pre">annotation_group_b</span></code> which
-is from group B, and <code class="docutils literal notranslate"><span class="pre">prediction_model_x</span></code> which is from prediction from model X, and <code class="docutils literal notranslate"><span class="pre">predictin_model_y</span></code>
-which is from model Y prediction. Different fields may different list of class names.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Class</span> <span class="pre">Indexing</span></code> (optional) defines mappings from integer values to labels. This is useful when the outputs of
-the different model are integer and different. Let’s say <code class="docutils literal notranslate"><span class="pre">prediction_model_x</span></code> has mapped <code class="docutils literal notranslate"><span class="pre">0</span></code> to <code class="docutils literal notranslate"><span class="pre">cat</span></code>, but
-<code class="docutils literal notranslate"><span class="pre">predictin_model_y</span></code> has mapped <code class="docutils literal notranslate"><span class="pre">0</span></code> to <code class="docutils literal notranslate"><span class="pre">dog</span></code>, and so on.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Info</span></code> (optional) allows us to add more additional information such as <code class="docutils literal notranslate"><span class="pre">batch_id</span></code>, <code class="docutils literal notranslate"><span class="pre">environment_id</span></code>, <code class="docutils literal notranslate"><span class="pre">date_collect</span></code>, etc.
-It is useful for management and organizing meta information of the dataset in a structural way.</p></li>
-</ul>
+                <div id="readtime_value" style="display:none">1 min</div>
+              <section id="smart-query">
+<h1>Smart Query<a class="headerlink" href="#smart-query" title="Permalink to this headline">#</a></h1>
+<p>With smart query, we have a lot of advanced ways to filter and select samples in our dataset.</p>
+<section id="query-bar">
+<h2>Query Bar<a class="headerlink" href="#query-bar" title="Permalink to this headline">#</a></h2>
+<p>To query samples with some specific conditions, go to “Query bar” (as shown in <a class="reference external" href="#fig1">Figure 1a</a>)
+and type some query conditions in Renex query format.
+The “Query bar” are integrated with autocomplete feature which suggests relevant query strings
+as shown in <a class="reference external" href="#fig1">Figure 1b</a></p>
 <div class="scalize" id="fig1">
-<img src="../_static/img/dialog_ds.jpg" class="target">
-<div class="caption"><span>Figure 1. Create dataset dialog</span> <a class="headerlink" href="#fig1" title="Permalink to this image">#</a></p></div>
-</div>
-<p>After filling the information, click “Create” button to confirm.</p>
-</section>
-<section id="import-dataset">
-<h2>Import dataset<a class="headerlink" href="#import-dataset" title="Permalink to this headline">#</a></h2>
-<p>To create a new dataset by importing an archive from a specific format, go to menu “Datasets” and click the
-button “Import” as follows:</p>
-<div class="scalize" id="img2">
-<img src="../_static/img/create_ds.jpg" class="target">
-<div class="item-point" data-top="71" data-left="26"><div><a href="#" class="toggle"></a></div></div>
-</div>
-<p>Here it requires to upload an archive file such as *.zip, *.tar, *.tar.gz with the content following Renex, CVAT and COCO format.</p>
-<section id="cvat-image-format">
-<h3>CVAT - Image format<a class="headerlink" href="#cvat-image-format" title="Permalink to this headline">#</a></h3>
-<ol class="arabic">
-<li><p>In the archive file, we must have the one of the following content:</p>
-<ol class="arabic">
-<li><p>a directory name “images” only, containing all images, possibly distributed in sub-directories. This could be used for uploading <em>unlabeled datasets</em>.</p>
-<div class="scalize" id="import_cvat_images">
-<img src="../_static/img/import_cvat_images.png" class="target">
-</div>
-</li>
-<li><p>a directory name “images”, containing all images; and a file name “annotations.xml” containing the annotations, could be both ground-truth and model predictions.</p>
-<div class="scalize" id="import_cvat_images2">
-<img src="../_static/img/import_cvat_images2.png" class="target">
-</div>
-</li>
-<li><p>A directory with the same name as the archive file’s basename; and containing the content as in (1.2).</p></li>
-</ol>
-</li>
-<li><p>The annotation follows the <i>Extended CVAT</i> format, which is mostly based on CVAT format v1.1 <a class="reference external" href="https://openvinotoolkit.github.io/cvat/docs/manual/advanced/xml_format">here</a></p></li>
-<li><p>The extended format further:</p>
-<ol class="arabic">
-<li><p>Supports single label (tag <label>) and multiple labels (tag <multilabel>) for an image. For example:</p>
-<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;image&gt;</span>
-<span class="w">   </span><span class="nt">&lt;label</span><span class="w"> </span><span class="na">label=</span><span class="s">&quot;home&quot;</span><span class="nt">&gt;&lt;/label&gt;</span>
-<span class="w">   </span><span class="nt">&lt;multilabel</span><span class="w"> </span><span class="na">label=</span><span class="s">&quot;A&quot;</span><span class="nt">&gt;&lt;/multilabel&gt;</span>
-<span class="w">   </span><span class="nt">&lt;multilabel</span><span class="w"> </span><span class="na">label=</span><span class="s">&quot;B&quot;</span><span class="nt">&gt;&lt;/multilabel&gt;</span>
-<span class="nt">&lt;/image&gt;</span>
-</pre></div>
-</div>
-</li>
-<li><p>Support additional, arbitrary attributes (tag <attribute>) for an image. For example:</p>
-<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;image&gt;</span>
-<span class="w">   </span><span class="nt">&lt;attribute</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;eval_tp&quot;</span><span class="nt">&gt;</span>3<span class="nt">&lt;/attribute&gt;</span>
-<span class="w">   </span><span class="nt">&lt;attribute</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;eval_fp&quot;</span><span class="nt">&gt;</span>0<span class="nt">&lt;/attribute&gt;</span>
-<span class="w">   </span><span class="nt">&lt;attribute</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;eval_fn&quot;</span><span class="nt">&gt;</span>1.0<span class="nt">&lt;/attribute&gt;</span>
-<span class="nt">&lt;/image&gt;</span>
-</pre></div>
-</div>
-</li>
-</ol>
-</li>
-</ol>
-</section>
-<section id="cvat-video-format">
-<h3>CVAT - Video format<a class="headerlink" href="#cvat-video-format" title="Permalink to this headline">#</a></h3>
-</section>
-<section id="coco-format">
-<h3>COCO format<a class="headerlink" href="#coco-format" title="Permalink to this headline">#</a></h3>
-<ol class="arabic simple">
-<li><p>After extracting the archive file, we must obtain the one of the following content:</p></li>
-<li><p>a directory name “images”, containing all images; and a file name “annotations.json” containing the annotations, could be both ground-truth and model predictions.</p></li>
-</ol>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  &lt;div class=&quot;scalize&quot; id=&quot;import_coco_images&quot;&gt;
-  &lt;img src=&quot;../_static/img/import_coco_images.png&quot; class=&quot;target&quot;&gt;
-  &lt;/div&gt;
-</pre></div>
-</div>
-<ol class="arabic simple" start="2">
-<li><p>A directory with the same name as the archive file’s basename; and containing the content as in (1.1).</p></li>
-<li><p>The annotation follows the COCO format: https://cocodataset.org/#format-data</p></li>
-</ol>
-</section>
-</section>
+<img src="../_static/img/smart_query.jpg" class="target">
+<div class="item-point" data-top="33" data-left="15"><div><a href="#" class="toggle">a</a></div></div>
+<div class="item-point" data-top="70" data-left="18"><div><a href="#" class="toggle">b</a></div></div>
+<div class="caption"><span>Figure 1. Renex query bar</span> <a class="headerlink" href="#fig1" title="Permalink to this image">#</a></p></div>
+</div></section>
 </section>
 
           
@@ -338,23 +247,23 @@ button “Import” as follows:</p>
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="using_workspaces.html">
+          <a class="next-page" href="../use_cases/index.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Using Workspaces</div>
+                <div class="title">Use Cases</div>
               </div>
               <svg><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="index.html">
+          <a class="prev-page" href="exploring_datasets.html">
               <svg><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">User Guide</div>
+                <div class="title">Exploring Datasets</div>
                 
               </div>
             </a>
@@ -367,8 +276,7 @@ button “Import” as follows:</p>
             Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
             
             <a href="https://github.com/pradyunsg/furo">Furo</a>
-            <div class="last-updated">
-              Last updated on Aug 02, 2022</div>
+            
           </div>
           <div class="right-details">
             <div class="icons">
@@ -391,14 +299,8 @@ button “Import” as follows:</p>
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">Using Datasets</a><ul>
-<li><a class="reference internal" href="#create-dataset">Create dataset</a></li>
-<li><a class="reference internal" href="#import-dataset">Import dataset</a><ul>
-<li><a class="reference internal" href="#cvat-image-format">CVAT - Image format</a></li>
-<li><a class="reference internal" href="#cvat-video-format">CVAT - Video format</a></li>
-<li><a class="reference internal" href="#coco-format">COCO format</a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#">Smart Query</a><ul>
+<li><a class="reference internal" href="#query-bar">Query Bar</a></li>
 </ul>
 </li>
 </ul>

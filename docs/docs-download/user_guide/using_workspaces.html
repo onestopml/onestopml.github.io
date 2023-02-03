@@ -3,11 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
-    <meta property="article:modified_time" content="2022-08-02T07:08:53+00:00" /><link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Quick Start" href="../sdkcli/quickstart.html" /><link rel="prev" title="Smart Query" href="../user_guide/smart_query.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Exploring Datasets" href="exploring_datasets.html" /><link rel="prev" title="Using Datasets" href="using_datasets.html" />
 
     <meta name="generator" content="sphinx-4.5.0, furo 2022.06.21"/>
-        <title>Use Cases - Renex 1.0.8</title>
+        <title>Using Workspaces - Renex 1.0.8</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
     <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
@@ -138,7 +137,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -162,14 +161,14 @@
 <li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../release.html">Release Notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../concepts.html">Core Concepts</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../user_guide/index.html">User Guide</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../user_guide/using_datasets.html">Using Datasets</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../user_guide/using_workspaces.html">Using Workspaces</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../user_guide/exploring_datasets.html">Exploring Datasets</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../user_guide/smart_query.html">Smart Query</a></li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">User Guide</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="using_datasets.html">Using Datasets</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Using Workspaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exploring_datasets.html">Exploring Datasets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="smart_query.html">Smart Query</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Use Cases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../use_cases/index.html">Use Cases</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">SDK/CLI Reference</span></p>
 <ul>
@@ -217,16 +216,43 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main">
           
-                <div id="readtime_value" style="display:none">1 min</div>
-              <section id="use-cases">
-<h1>Use Cases<a class="headerlink" href="#use-cases" title="Permalink to this headline">#</a></h1>
+                <div id="readtime_value" style="display:none">2 min</div>
+              <section id="using-workspaces">
+<h1>Using Workspaces<a class="headerlink" href="#using-workspaces" title="Permalink to this headline">#</a></h1>
+<p id="readtime"></p>
+<p>A user can have multiple workspaces to work on different datasets at the same time. Each workspace
+will be associated with the only dataset, but a dataset could be attached to different workspaces, in case
+the user wants to work on different views (filters, sorting, etc) of the same dataset.</p>
+<section id="create-workspace">
+<h2>Create workspace<a class="headerlink" href="#create-workspace" title="Permalink to this headline">#</a></h2>
+<p>To create a new workspace, go to menu “Workspaces” and click the button “Create” as follows:</p>
+<div class="scalize" id="img1">
+<img src="../_static/img/workspaces.jpg" class="target">
+<div class="item-point" data-top="77" data-left="12.5"><div><a href="#" class="toggle"></a></div></div>
+</div>
+<p>Then, a popup dialog is show as <a class="reference external" href="#fig1">Figure 1</a>. Fill the information as below:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Name</span></code> (required) the workspace name. We accept any string including space and other special characters.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Alias</span></code> (optional) allows users create a custom url for direct access and easy remember. Keep in mind that the
+alias is a part of the url format, hence it must follow the url format, e.g. must not contain <code class="docutils literal notranslate"><span class="pre">/</span></code> character.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Dataset</span></code> (required) specifies which dataset we want to work in this workspace. All datasets which have at least
+a <code class="docutils literal notranslate"><span class="pre">view</span></code> permission will be shown in the dropdown list.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Description</span></code> allows users take some notes in the workspace</p></li>
+</ul>
+<div class="scalize" id="fig1">
+<img src="../_static/img/dialog_create_ws.jpg" class="target">
+<div class="caption"><span>Figure 1. Create workspace dialog</span> <a class="headerlink" href="#fig1" title="Permalink to this image">#</a></p></div>
+</div>
+<p>After filling the information, click “Confirm” button to confirm. Then, the workspace will be created. Please
+give us a few seconds to initialize the workspace.</p>
+</section>
 </section>
 
           
@@ -235,23 +261,23 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="../sdkcli/quickstart.html">
+          <a class="next-page" href="exploring_datasets.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Quick Start</div>
+                <div class="title">Exploring Datasets</div>
               </div>
               <svg><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="../user_guide/smart_query.html">
+          <a class="prev-page" href="using_datasets.html">
               <svg><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Smart Query</div>
+                <div class="title">Using Datasets</div>
                 
               </div>
             </a>
@@ -264,8 +290,7 @@
             Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
             
             <a href="https://github.com/pradyunsg/furo">Furo</a>
-            <div class="last-updated">
-              Last updated on Aug 02, 2022</div>
+            
           </div>
           <div class="right-details">
             <div class="icons">
@@ -276,8 +301,27 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            Contents
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Using Workspaces</a><ul>
+<li><a class="reference internal" href="#create-workspace">Create workspace</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>
