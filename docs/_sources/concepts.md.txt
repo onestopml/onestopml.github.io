@@ -19,10 +19,21 @@ Each user can have multiple datasets and manage permission for each dataset. The
 are two ways to work with datasets. One is to use our web application with rich user experience. To access user's 
 datasets, click the menu "datasets" as shown in [Figure 1a](#fig1). 
 Another is to use our SDK/CLI (refer to [this](sdkcli/datasets/index.html))
+
 ## Workspaces 
 Workspace is a place for users to view a datasets. In there, we support a lot of visual tools to help users
 do analysis as quick as possible. Like datasets, we support two ways to work with: via web application
 and via SDK/CLI. To access user's workspace on the web application, 
 click the menu "workspaces" as shown in [Figure 1b](#fig1). 
+
 ## Models 
-## Experiments 
+Models are the core of machine learning (ML) products. In ML operations and throughout the ML lifecycle, the model registry helps users to manage the different versions of ML models. It acts as a central repository to store and manage models, including their metadata, such as their performance metrics, training data, hyperparameters, and other relevant information.
+
+The model registry also support keeping track of model versions, dependencies, and associated code, allowing for easier collaboration, version control, and reproducibility. It also enables teams to share and reuse models across different projects and applications.
+
+In the machine learning lifecycle, a model registry is particularly useful during the deployment phase, where it allows for tracking of model performance, monitoring, and management of model drift. It also aids in the process of model retraining or updating by keeping track of the changes made to the model.
+
+## Experiments
+Experience management is a critical aspect of MLOps and ML lifecycle. It involves the data collection, analysis, management, model verisons and hyperparameters related to the user experiments of ML models, including performance metrics, feedback and users' observations.
+
+In the development phase, the experience management helps model builders to identify areas for model improvement such as failure patterns and hyperparameter tuning. In the deployment and maintenance phases, it allows teams to track model performance in production environments and detect issues such as model drift or degradation, and then take actions including model retraining or updating. It also helps organizations make informed decisions about model performance, such as whether to retire or replace a model.

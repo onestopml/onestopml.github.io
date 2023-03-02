@@ -42,6 +42,8 @@ button "Import" as follows:
 
 Here it requires to upload an archive file such as *.zip, *.tar, *.tar.gz with the content following Renex, CVAT and COCO format.
 
+### Renex format
+To be added.
 ### CVAT - Image format
 1. In the archive file, we must have the one of the following content:
    1. a directory name “images” only, containing all images, possibly distributed in sub-directories. This could be used for uploading *unlabeled datasets*.
@@ -73,12 +75,32 @@ Here it requires to upload an archive file such as *.zip, *.tar, *.tar.gz with t
       ```
 
 ### CVAT - Video format
+To be added.
 ### COCO format
-1.	After extracting the archive file, we must obtain the one of the following content:
-   1.	a directory name “images”, containing all images; and a file name “annotations.json” containing the annotations, could be both ground-truth and model predictions.
+1. After extracting the archive file, we must obtain the one of the following content:
+   1. A directory name "images", containing all images; and a file name "annotations.json" containing the annotations, could be both ground-truth and model predictions.
       <div class="scalize" id="import_coco_images">
       <img src="../_static/img/import_coco_images.png" class="target">
       </div>
    2. A directory with the same name as the archive file’s basename; and containing the content as in (1.1).
 2.	The annotation follows the COCO format: https://cocodataset.org/#format-data
 
+## View, edit, delete, share dataset
+   <div class="scalize" id="dataset_action1">
+   <img src="../_static/img/dataset_action1.png" class="target">
+   </div>
+
+1. To view a dataset, we need to create a corresponding workspace, please see "Using Workspaces" section ([TODO]: add a link).
+2. Click “Edit” to change some information: name, revision, classes, annotation names, predictions names, etc.
+3. Click "Delete" icon.
+4. Click "Share" icon.
+
+## Transform dataset
+   <div class="scalize" id="dataset_action2">
+   <img src="../_static/img/dataset_action2.png" class="target">
+   </div>
+
+1. Clone
+2. Merge
+3. Convert from fisheye to pinhole
+4. Convert to night vision dataset

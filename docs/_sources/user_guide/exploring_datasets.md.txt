@@ -1,7 +1,33 @@
 # Exploring Datasets
 In a workspace, we can explore the dataset in different ways. 
-## Filter by labels
-## Filter by query
+### Filter by labels
+|      |           |
+| :--- | :-------: |
+| Show only (Select) detections as “person” in the “ground_truth”. Then there are 2,693 images with at least one person specified in the “ground_truth”. |![](../_static/img/ds_filter1.png)|
+| Not show (Exclude) detections as “person” in the “ground_truth”. Then there are 4,934 images with at least one person specified in the “ground_truth”. |![](../_static/img/ds_filter2.png)|
+| Show 35 images recognized as “ski” with 0.8 <= confidence score <= 0.95. |![](../_static/img/ds_filter3.png)|
+| Click the eye icon to show only 1 sample with grayscale tag. |![](../_static/img/ds_filter4.png)|
+| Filter by enter ID or filepath string. |![](../_static/img/ds_filter5.png)|
+| Click “Sort By Ascending” / “Sort By Descending” to sort samples with the “eval_tp” values in ascending / descending order. Limit the “eval_tp” by changing min, max values on the slider. |![](../_static/img/ds_filter6.png)|
+
+
+### Smart query
 We can filter our dataset by using queries. For more detail, please refer to [smart query user guide](smart_query.html)
-## Navigate views 
-## Coloring annotations
+
+### Navigate views
+1. Click the bookmark button to apply the filter on the right panel to the current view.
+![](../_static/img/ds_view1.png)
+2. Click the back button to go back to the previous view. For example: undo the step (1) above.
+![](../_static/img/ds_view2.png)
+
+### Coloring annotations
+<div>
+<img src="../_static/img/ds_color_annot1.png" width="30%" class="target">
+</div>
+
+Switching between color by field and by value:
+
+|By field                   |By value                   |
+|:--                        |:--                        |
+|<img src="../_static/img/ds_color_annot2.png" width="80%" class="target">|<img src="../_static/img/ds_color_annot3.png" width="100%" class="target">|
+|<img src="../_static/img/ds_color_annot4.png" width="85%" class="target">|<img src="../_static/img/ds_color_annot5.png" width="100%" class="target">|

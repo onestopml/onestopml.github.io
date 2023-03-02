@@ -1,14 +1,62 @@
 # Smart Query
 With smart query, we have a lot of advanced ways to filter and select samples in our dataset.
-## Query Bar
-To query samples with some specific conditions, go to "Query bar" (as shown in [Figure 1a](#fig1)) 
-and type some query conditions in Renex query format. 
-The "Query bar" are integrated with autocomplete feature which suggests relevant query strings 
-as shown in [Figure 1b](#fig1)
 
-<div class="scalize" id="fig1">
-<img src="../_static/img/smart_query.jpg" class="target">
-<div class="item-point" data-top="33" data-left="15"><div><a href="#" class="toggle">a</a></div></div>
-<div class="item-point" data-top="70" data-left="18"><div><a href="#" class="toggle">b</a></div></div>
-<div class="caption"><span>Figure 1. Renex query bar</span> <a class="headerlink" href="#fig1" title="Permalink to this image">#</a></p></div>
-</div>
+1. Query Bar
+   
+   To query samples with some specific conditions, go to "Query bar" (as shown in [Figure 1a](#fig1)) and type some query conditions in Renex query format. The "Query bar" are integrated with autocomplete feature which suggests relevant query strings as shown in [Figure 1b](#fig1)
+
+   <div class="scalize" id="fig1">
+   <img src="../_static/img/smart_query.jpg" class="target">
+   <div class="item-point" data-top="33" data-left="15"><div><a href="#" class="toggle">a</a></div></div>
+   <div class="item-point" data-top="70" data-left="18"><div><a href="#" class="toggle">b</a></div></div>
+   <div class="caption"><span>Figure 1. Renex query bar</span> <a class="headerlink" href="#fig1" title="Permalink to this image">#</a></p></div>
+   </div>
+
+2. Instruction for typing query string
+
+   Query string can be typed manually with the support of auto-suggestion feature. 
+  
+   For example, type first few characters of sample field and choose suggestion by “Up/Down” key or click left mouse on the correct suggestion. After choose suggestion, press next keyword to go to next suggestion. When finish query string, press “Enter” 
+
+   In order to make system work as expected, the query string must have “empty space” between each term in query sentence.
+
+   |     |     |
+   | :-- | --: |
+   | To find field "ground_truth", Type "gr" and choose suggestion. |<img src="../_static/img/smart_query_1.png" width="80%" class="target">|
+   | Next type "." |<img src="../_static/img/smart_query_2.png" width="80%" class="target">|
+   | Next to find person, type "per" and choose suggestion. |<img src="../_static/img/smart_query_3.png" width="80%" class="target">|
+   | When complete query sentences, press Enter. |<img src="../_static/img/smart_query_4.png" width="80%" class="target">|
+
+3. Query samples by its annotation field with single condition
+   
+   To query samples with single condition, type query string as below format with corresponding field type:
+   |     |     |
+   | :-- | --: |
+   | **Single Classification**:<br /> `<sample_field>` `<ops>` `<value>`.<br />`ops` in `{=, !=}`. |<img src="../_static/img/smart_query_5.png" width="80%" class="target">|
+   | **Multi-label**:<br /> `<sample_field.class_name>` `<ops>` `0`.<br />`ops` in `{=, >}`. |<img src="../_static/img/smart_query_6.png" width="80%" class="target">|
+   | **Detection/Polygons/Polylines/Keypoints**:<br /> - By number of objects:<br />`<sample_field.count>` `<ops>` `<value>`.<br /> - By specifying class:<br />`<sample_field.class_name>` `<ops>` `<value>`.<br /> `ops` in `{>, >=, <, <=, =, !=}`. |<img src="../_static/img/smart_query_7.png" width="80%" class="target"><img src="../_static/img/smart_query_8.png" width="80%" class="target">|
+
+4. Query samples by its annotation field with multiple conditions 
+
+   To query samples with multiple condition, use AND/OR between query string. Note that query string must be inside round bracket as `( query string )`.
+
+   ![](../_static/img/smart_query_9.png)
+
+5. Query samples by multiple conditions and extra math operations
+
+   The query string can be flexible by adding math operations in right term in usecase you need.
+
+   ![](../_static/img/smart_query_10.png)
+
+6. Query samples by metadata 
+
+   Some dataset may have metadata field, we can query sample based on its metadata by type "metadata" in beginning of query string.
+
+   ![](../_static/img/smart_query_11.png)
+
+7. Query samples by other fields
+
+   In order to query sample by other fields (for example: evaluation metrics), first calculate and input the metric value to Renex dataset. Then type query string with sample field as imported evaluation metric. 
+   For example, query samples which have number of true positive larger than 3.
+
+   ![](../_static/img/smart_query_12.png)

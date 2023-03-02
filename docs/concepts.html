@@ -3,10 +3,11 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="User Guide" href="user_guide/index.html" /><link rel="prev" title="Release Notes" href="release.html" />
+
+    <meta property="article:modified_time" content="2023-02-24T04:01:38+00:00" /><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="User Guide" href="user_guide/index.html" /><link rel="prev" title="Release Notes" href="release.html" />
 
     <meta name="generator" content="sphinx-4.5.0, furo 2022.06.21"/>
-        <title>Core Concepts - Renex 1.0.8</title>
+        <title>Core Concepts - Renex 1.1.0</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
     <link rel="stylesheet" type="text/css" href="_static/tabs.css" />
@@ -126,7 +127,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Renex 1.0.8</div></a>
+      <a href="index.html"><div class="brand">Renex 1.1.0</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -149,7 +150,7 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
   
   
-  <span class="sidebar-brand-text">Renex 1.0.8</span>
+  <span class="sidebar-brand-text">Renex 1.1.0</span>
   
 </a><form class="sidebar-search-container" method="get" action="search.html" role="search">
   <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
@@ -223,7 +224,7 @@
         </div>
         <article role="main">
           
-                <div id="readtime_value" style="display:none">2 min</div>
+                <div id="readtime_value" style="display:none">3 min</div>
               <section id="core-concepts">
 <h1>Core Concepts<a class="headerlink" href="#core-concepts" title="Permalink to this headline">#</a></h1>
 <p id="readtime"></p>
@@ -255,9 +256,14 @@ click the menu “workspaces” as shown in <a class="reference external" href="
 </section>
 <section id="models">
 <h2>Models<a class="headerlink" href="#models" title="Permalink to this headline">#</a></h2>
+<p>Models are the core of machine learning (ML) products. In ML operations and throughout the ML lifecycle, the model registry helps users to manage the different versions of ML models. It acts as a central repository to store and manage models, including their metadata, such as their performance metrics, training data, hyperparameters, and other relevant information.</p>
+<p>The model registry also support keeping track of model versions, dependencies, and associated code, allowing for easier collaboration, version control, and reproducibility. It also enables teams to share and reuse models across different projects and applications.</p>
+<p>In the machine learning lifecycle, a model registry is particularly useful during the deployment phase, where it allows for tracking of model performance, monitoring, and management of model drift. It also aids in the process of model retraining or updating by keeping track of the changes made to the model.</p>
 </section>
 <section id="experiments">
 <h2>Experiments<a class="headerlink" href="#experiments" title="Permalink to this headline">#</a></h2>
+<p>Experience management is a critical aspect of MLOps and ML lifecycle. It involves the data collection, analysis, management, model verisons and hyperparameters related to the user experiments of ML models, including performance metrics, feedback and users’ observations.</p>
+<p>In the development phase, the experience management helps model builders to identify areas for model improvement such as failure patterns and hyperparameter tuning. In the deployment and maintenance phases, it allows teams to track model performance in production environments and detect issues such as model drift or degradation, and then take actions including model retraining or updating. It also helps organizations make informed decisions about model performance, such as whether to retire or replace a model.</p>
 </section>
 </section>
 
@@ -296,7 +302,8 @@ click the menu “workspaces” as shown in <a class="reference external" href="
             Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
             
             <a href="https://github.com/pradyunsg/furo">Furo</a>
-            
+            <div class="last-updated">
+              Last updated on Feb 24, 2023</div>
           </div>
           <div class="right-details">
             <div class="icons">

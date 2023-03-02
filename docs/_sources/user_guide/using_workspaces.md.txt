@@ -27,3 +27,15 @@ Then, a popup dialog is show as [Figure 1](#fig1). Fill the information as below
 
 After filling the information, click "Confirm" button to confirm. Then, the workspace will be created. Please
 give us a few seconds to initialize the workspace. 
+
+## View dataset, edit, delete, restart, update workspace
+   <div class="scalize" id="workspace_action1">
+   <img src="../_static/img/workspace_action1.png" width="20%" class="target">
+   </div>
+
+1. View dataset
+2. Edit
+3. Delete
+4. Update
+5. Share
+6. Restart

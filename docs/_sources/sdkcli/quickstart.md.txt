@@ -10,7 +10,7 @@ but we’ll also show you how to use Renex in command line interface
 
 You can install the latest official version of Renex as follows.
 ```bash
-pip install -U https://renex.smart-data.ml/dist/renex-0.0.1-py3-none-any.whl
+pip install -U https://renex.smart-data.ml/dist/renex-1.1.0-py3-none-any.whl
 ```
 ```{admonition} Supported Python versions
 :class: note
@@ -21,7 +21,7 @@ Currently, we are supporting Python versions >= 3.6. Please let us know if you w
 ````{tab} Python
 ```python
 import renex
-renex.init(...)
+renex.init(username='####', password='####', host='http://renex.smart-data.ml')
 ```
 
 ````

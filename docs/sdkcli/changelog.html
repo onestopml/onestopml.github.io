@@ -3,10 +3,11 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="License" href="license.html" /><link rel="prev" title="Advanced Usage" href="advanced/index.html" />
+
+    <meta property="article:modified_time" content="2023-02-24T04:01:38+00:00" /><link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="License" href="license.html" /><link rel="prev" title="Advanced Usage" href="advanced/index.html" />
 
     <meta name="generator" content="sphinx-4.5.0, furo 2022.06.21"/>
-        <title>Changelog - Renex 1.0.8</title>
+        <title>Changelog - Renex 1.1.0</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
     <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
@@ -126,7 +127,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">Renex 1.0.8</div></a>
+      <a href="../index.html"><div class="brand">Renex 1.1.0</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -149,7 +150,7 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
   
   
-  <span class="sidebar-brand-text">Renex 1.0.8</span>
+  <span class="sidebar-brand-text">Renex 1.1.0</span>
   
 </a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
   <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
@@ -223,14 +224,197 @@
         </div>
         <article role="main">
           
-                <div id="readtime_value" style="display:none">1 min</div>
+                <div id="readtime_value" style="display:none">7 min</div>
               <section id="changelog">
 <h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline">#</a></h1>
-<section id="v-0-0-1">
-<h2>v.0.0.1<a class="headerlink" href="#v-0-0-1" title="Permalink to this headline">#</a></h2>
+<section id="v1-1-0">
+<h2>v1.1.0<a class="headerlink" href="#v1-1-0" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
-<li><p>Support datasets for some basic tasks</p></li>
-<li><p>Initial version</p></li>
+<li><p>Enable sending multiple annotation fields</p></li>
+<li><p>[feat] support airflow</p></li>
+<li><p>[BE] Object Gallery API</p></li>
+<li><p>[upgrade] import datasets for object gallery</p></li>
+<li><p>[FE] Update README.md to newest</p></li>
+<li><p>Backend API to cut-paste objects a single image keyframe</p></li>
+<li><p>[feat] support add segmentation annotation and add video sample</p></li>
+<li><p>[FE] Data Synthesis Editor Integration</p></li>
+<li><p>remove_refresh_interval_dataset_and_workspace</p></li>
+<li><p>Fix cut-paste, support import &amp; export instance-mask and semantic-mask</p></li>
+<li><p>[BE] API for generate single video using cutpaste</p></li>
+<li><p>[FE] Render single video and generate many videos</p></li>
+<li><p>[feat] support generate multiple videos via cutpaste</p></li>
+<li><p>Implement supporting cutpaste dynamic</p></li>
+<li><p>[FE] Filter dataset by ID and update Datasync to commit ed8f05cd</p></li>
+<li><p>[BE] list objects galleries</p></li>
+<li><p>[upgrade] crop image when import objects</p></li>
+<li><p>Cut-paste objects to specific layers in z-axis of a single frame</p></li>
+<li><p>[update] allow cutpaste api select gallery id</p></li>
+<li><p>Update to the latest version of datasyn including minimap, location interpolation, context menu</p></li>
+<li><p>[fix] cutpaste when objects are out of frame</p></li>
+<li><p>[FE] Layer for objects</p></li>
+<li><p>[feat] Data transformation to night vision</p></li>
+<li><p>[BE] Add more object parameters to control the object appearance</p></li>
+<li><p>[BE] Modify ReneX endpoint supporting fisheye_static model</p></li>
+<li><p>[FE] Fisheye transform for demo #3</p></li>
+<li><p>[Bugfix] Renex’s payload sent to Taskman</p></li>
+<li><p>[update] default permissions for vsearch-backend at review envs</p></li>
+<li><p>Import sample to object bank after transformation</p></li>
+<li><p>[FE] Minimap update &amp; Object handling</p></li>
+<li><p>[sdk] allow call api directly and support import datasets</p></li>
+<li><p>[FE] Flip object and rotation direction for car wheels</p></li>
+<li><p>[FE] Parameters: rotation, motion_blur_intensity</p></li>
+<li><p>[Datasyn][FE] Reverse wheel improvements</p></li>
+<li><p>Parallelize dataset transformation in Taskman</p></li>
+<li><p>Color picker and transfer</p></li>
+<li><p>[SDK] Implement Python SDK for video data</p></li>
+<li><p>[fix] api annotation bug</p></li>
+<li><p>[BE] [Datasyn] Support Datasyn API from Renex</p></li>
+<li><p>Revert to use full Plotly JS and fix confusion matrix bug at backend</p></li>
+<li><p>[fix] workspace auth bug</p></li>
+<li><p>Refactor calling dimension reduction model (TSNE)</p></li>
+<li><p>[SDK] support adding samples concurrently to dataset</p></li>
+<li><p>[FE] Similar Search Panel Bugfix</p></li>
+<li><p>Refactor Executor for dimension reduction and image de-duplication models</p></li>
+<li><p>[cicd] auto web app test pipeline</p></li>
+<li><p>[FE] Fix Datasyn SSR rendering &amp; Fix Renex bugs</p></li>
+<li><p>[FE] Remove execution jobs</p></li>
+<li><p>[autotest] import datasets</p></li>
+<li><p>[FE] Add spacebar pressed to select sample</p></li>
+</ul>
+</section>
+<section id="v1-0-9">
+<h2>v1.0.9<a class="headerlink" href="#v1-0-9" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Enable sending multiple annotation fields</p></li>
+<li><p>OpenAPI generator fixup</p></li>
+<li><p>Dataset and Workspaces Table View Refactor</p></li>
+<li><p>Highly customizable inputs and parameters for model inference</p></li>
+<li><p>Improve UI/UX for Smart Search</p></li>
+<li><p>update custom bundling logic for plotly</p></li>
+<li><p>[DevOps] Fix traefik registry routing</p></li>
+<li><p>Revise workspace loading mechanism</p></li>
+<li><p>Traefik compression</p></li>
+<li><p>Change query bar UI</p></li>
+<li><p>Speedup workspaces page</p></li>
+<li><p>Add onTokenExpired to keycloak handler</p></li>
+<li><p>[DevOps] Dockerfile improvement</p></li>
+<li><p>Update datasets get basic info only</p></li>
+<li><p>Registry Keykeeper Improvement</p></li>
+<li><p>Dataset management page ui redesign</p></li>
+<li><p>[FE] Implement 2 buttons and functions for Sample tags</p></li>
+<li><p>Use async for dataset API endpoints</p></li>
+<li><p>Dataset fetching policy changes</p></li>
+<li><p>Improve user profile page and indicate media type</p></li>
+<li><p>[DevOps] Add constraints for web root in testing mode</p></li>
+<li><p>[update] user manual</p></li>
+<li><p>correct handler condition when disable btns</p></li>
+<li><p>Speedup dataset page and update dataset API params</p></li>
+<li><p>Show line charts for video if available</p></li>
+<li><p>[update] authz workspace via cookie</p></li>
+<li><p>[update] info endpoint</p></li>
+<li><p>Configure Keycloak Client</p></li>
+<li><p>Add rule of hooks eslint</p></li>
+<li><p>Support RestAPIs for videos</p></li>
+</ul>
+</section>
+<section id="v1-0-8">
+<h2>v1.0.8<a class="headerlink" href="#v1-0-8" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Support client credential login for SDK</p></li>
+<li><p>Integrate uniqueness model</p></li>
+<li><p>Support temporal detection, clips, events labels in Renex format</p></li>
+<li><p>Setting up eslint &amp; prettier for error checking</p></li>
+<li><p>Do not return permission(s) entries when return ids only</p></li>
+<li><p>Fix error related to CVAT version</p></li>
+<li><p>Other bugfixes and stability improvements</p></li>
+</ul>
+</section>
+<section id="v1-0-7">
+<h2>v1.0.7<a class="headerlink" href="#v1-0-7" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Fix issues when evaluating temporal detections and exporting Renex image dataset</p></li>
+<li><p>enable input numbers to range slider</p></li>
+<li><p>Allow to restart workspaces</p></li>
+<li><p>Rename, delete annotation and prediction names</p></li>
+<li><p>Fix bug in getting execution job list</p></li>
+<li><p>fix range sample when hold shift key</p></li>
+</ul>
+</section>
+<section id="v1-0-6">
+<h2>v1.0.6<a class="headerlink" href="#v1-0-6" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Fix human pose color and annotation SDKs &amp; APIs.</p></li>
+<li><p>Implement Model Registry APIs in Python SDKs for Client Package v0.2</p></li>
+<li><p>Implement the front-end query bar and back-end for natural text query</p></li>
+<li><p>Enable sending annotation tasks to custom CVAT engine</p></li>
+</ul>
+</section>
+<section id="v1-0-5">
+<h2>v1.0.5<a class="headerlink" href="#v1-0-5" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Fix bugs to allow additional sample fields &amp; lock openapi-gencode version</p></li>
+<li><p>Support video-level evaluation</p></li>
+</ul>
+</section>
+<section id="v1-0-4">
+<h2>v1.0.4<a class="headerlink" href="#v1-0-4" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Workspace SDK</p></li>
+<li><p>Change keycloak endpoint</p></li>
+<li><p>Shutdown spare workspaces</p></li>
+<li><p>Support GPU executor</p></li>
+<li><p>Dataset SDK</p></li>
+<li><p>Add dropdown sample tag list when adding samples to another dataset</p></li>
+<li><p>Select all samples having a tag while still viewing all dataset</p></li>
+<li><p>View samples while being in selection mode</p></li>
+<li><p>Support fast switch to self-managed keykeeper</p></li>
+<li><p>Fix issue creating WS in dataset list</p></li>
+<li><p>Change fluentd address and fix creating Renex annotation objects</p></li>
+<li><p>SDK/CLI docs</p></li>
+<li><p>Align log format</p></li>
+</ul>
+</section>
+<section id="v1-0-3">
+<h2>v1.0.3<a class="headerlink" href="#v1-0-3" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>SDK supports generic collections</p></li>
+<li><p>Fix importing additional attributes and exporting video dataset UFC</p></li>
+<li><p>Fix import, export dataset, check executor job status, edit workspace</p></li>
+<li><p>Remove misleading “No dataset selected” message while loading workspace</p></li>
+<li><p>Fix scatter plot select issues</p></li>
+<li><p>Improve UI/UX and fix bugs</p></li>
+</ul>
+</section>
+<section id="v1-0-2">
+<h2>v1.0.2<a class="headerlink" href="#v1-0-2" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Add media type and extensions when submitting job to Executor</p></li>
+<li><p>Calculate evaluation results on the current view</p></li>
+<li><p>Upgrade logging format to support newly upgraded fluentd server</p></li>
+<li><p>Fix handle keykeeper errors</p></li>
+<li><p>Dataset operation: clone and merge dataset</p></li>
+<li><p>Upgrade Python SDK package</p></li>
+<li><p>Select all samples</p></li>
+<li><p>Profiling using timeit decorator</p></li>
+<li><p>Implement traefik routing per healthcheck</p></li>
+<li><p>Change display name for registry model</p></li>
+<li><p>Remove unnecessary loading state for faster loading page</p></li>
+</ul>
+</section>
+<section id="v1-0-1">
+<h2>v1.0.1<a class="headerlink" href="#v1-0-1" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Add option store embedding features in dataset</p></li>
+<li><p>Store embedding features as np array which will be used in computing similarity (similarity search)</p></li>
+<li><p>Add calculate low-dimension points for embedding feature (tsne, pca, umap, ..)</p></li>
+<li><p>Change title for adding sample to other dataset</p></li>
+<li><p>Add optional new sample field for annotation job</p></li>
+</ul>
+</section>
+<section id="v1-0-0">
+<h2>v1.0.0<a class="headerlink" href="#v1-0-0" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Initial release</p></li>
 </ul>
 </section>
 </section>
@@ -270,7 +454,8 @@
             Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
             
             <a href="https://github.com/pradyunsg/furo">Furo</a>
-            
+            <div class="last-updated">
+              Last updated on Feb 24, 2023</div>
           </div>
           <div class="right-details">
             <div class="icons">
@@ -294,7 +479,17 @@
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Changelog</a><ul>
-<li><a class="reference internal" href="#v-0-0-1">v.0.0.1</a></li>
+<li><a class="reference internal" href="#v1-1-0">v1.1.0</a></li>
+<li><a class="reference internal" href="#v1-0-9">v1.0.9</a></li>
+<li><a class="reference internal" href="#v1-0-8">v1.0.8</a></li>
+<li><a class="reference internal" href="#v1-0-7">v1.0.7</a></li>
+<li><a class="reference internal" href="#v1-0-6">v1.0.6</a></li>
+<li><a class="reference internal" href="#v1-0-5">v1.0.5</a></li>
+<li><a class="reference internal" href="#v1-0-4">v1.0.4</a></li>
+<li><a class="reference internal" href="#v1-0-3">v1.0.3</a></li>
+<li><a class="reference internal" href="#v1-0-2">v1.0.2</a></li>
+<li><a class="reference internal" href="#v1-0-1">v1.0.1</a></li>
+<li><a class="reference internal" href="#v1-0-0">v1.0.0</a></li>
 </ul>
 </li>
 </ul>

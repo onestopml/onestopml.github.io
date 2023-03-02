@@ -84,6 +84,33 @@ ds = renex.datasets[ds01.id]
 
 ````
 
+## Push samples to a dataset
+````{tab} Python
+```python
+import glob
+import logging
+import renex
+from renex import Dataset, Sample
+
+
+logging.getLogger('renex').setLevel(logging.INFO)
+renex.init(username='####', password='####', host='http://renex.smart-data.ml')
+
+# get the dataset
+dataset_id = '####'
+ds = renex.datasets[dataset_id]
+
+list_samples = [
+    Sample(dataset_id=ds.id, filepath=filename, media_type='video')
+    for filename in glob.glob('data/*.mp4')
+]
+
+ds.samples.add(list_samples, show_progress=True)
+ds.samples.pull()
+```
+
+````
+
 ````{tab} CLI
 ```bash
 We will support later

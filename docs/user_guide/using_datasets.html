@@ -3,10 +3,11 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Using Workspaces" href="using_workspaces.html" /><link rel="prev" title="User Guide" href="index.html" />
+
+    <meta property="article:modified_time" content="2023-02-24T04:01:38+00:00" /><link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Using Workspaces" href="using_workspaces.html" /><link rel="prev" title="User Guide" href="index.html" />
 
     <meta name="generator" content="sphinx-4.5.0, furo 2022.06.21"/>
-        <title>Using Datasets - Renex 1.0.8</title>
+        <title>Using Datasets - Renex 1.1.0</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
     <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
@@ -126,7 +127,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">Renex 1.0.8</div></a>
+      <a href="../index.html"><div class="brand">Renex 1.1.0</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -149,7 +150,7 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
   
   
-  <span class="sidebar-brand-text">Renex 1.0.8</span>
+  <span class="sidebar-brand-text">Renex 1.1.0</span>
   
 </a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
   <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
@@ -266,6 +267,10 @@ button “Import” as follows:</p>
 <div class="item-point" data-top="71" data-left="26"><div><a href="#" class="toggle"></a></div></div>
 </div>
 <p>Here it requires to upload an archive file such as *.zip, *.tar, *.tar.gz with the content following Renex, CVAT and COCO format.</p>
+<section id="renex-format">
+<h3>Renex format<a class="headerlink" href="#renex-format" title="Permalink to this headline">#</a></h3>
+<p>To be added.</p>
+</section>
 <section id="cvat-image-format">
 <h3>CVAT - Image format<a class="headerlink" href="#cvat-image-format" title="Permalink to this headline">#</a></h3>
 <ol class="arabic">
@@ -311,23 +316,48 @@ button “Import” as follows:</p>
 </section>
 <section id="cvat-video-format">
 <h3>CVAT - Video format<a class="headerlink" href="#cvat-video-format" title="Permalink to this headline">#</a></h3>
+<p>To be added.</p>
 </section>
 <section id="coco-format">
 <h3>COCO format<a class="headerlink" href="#coco-format" title="Permalink to this headline">#</a></h3>
-<ol class="arabic simple">
-<li><p>After extracting the archive file, we must obtain the one of the following content:</p></li>
-<li><p>a directory name “images”, containing all images; and a file name “annotations.json” containing the annotations, could be both ground-truth and model predictions.</p></li>
-</ol>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  &lt;div class=&quot;scalize&quot; id=&quot;import_coco_images&quot;&gt;
-  &lt;img src=&quot;../_static/img/import_coco_images.png&quot; class=&quot;target&quot;&gt;
-  &lt;/div&gt;
-</pre></div>
+<ol class="arabic">
+<li><p>After extracting the archive file, we must obtain the one of the following content:</p>
+<ol class="arabic">
+<li><p>A directory name “images”, containing all images; and a file name “annotations.json” containing the annotations, could be both ground-truth and model predictions.</p>
+<div class="scalize" id="import_coco_images">
+<img src="../_static/img/import_coco_images.png" class="target">
 </div>
-<ol class="arabic simple" start="2">
+</li>
 <li><p>A directory with the same name as the archive file’s basename; and containing the content as in (1.1).</p></li>
+</ol>
+</li>
 <li><p>The annotation follows the COCO format: https://cocodataset.org/#format-data</p></li>
 </ol>
 </section>
+</section>
+<section id="view-edit-delete-share-dataset">
+<h2>View, edit, delete, share dataset<a class="headerlink" href="#view-edit-delete-share-dataset" title="Permalink to this headline">#</a></h2>
+   <div class="scalize" id="dataset_action1">
+   <img src="../_static/img/dataset_action1.png" class="target">
+   </div>
+<ol class="arabic simple">
+<li><p>To view a dataset, we need to create a corresponding workspace, please see “Using Workspaces” section ([TODO]: add a link).</p></li>
+<li><p>Click “Edit” to change some information: name, revision, classes, annotation names, predictions names, etc.</p></li>
+<li><p>Click “Delete” icon.</p></li>
+<li><p>Click “Share” icon.</p></li>
+</ol>
+</section>
+<section id="transform-dataset">
+<h2>Transform dataset<a class="headerlink" href="#transform-dataset" title="Permalink to this headline">#</a></h2>
+   <div class="scalize" id="dataset_action2">
+   <img src="../_static/img/dataset_action2.png" class="target">
+   </div>
+<ol class="arabic simple">
+<li><p>Clone</p></li>
+<li><p>Merge</p></li>
+<li><p>Convert from fisheye to pinhole</p></li>
+<li><p>Convert to night vision dataset</p></li>
+</ol>
 </section>
 </section>
 
@@ -366,7 +396,8 @@ button “Import” as follows:</p>
             Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
             
             <a href="https://github.com/pradyunsg/furo">Furo</a>
-            
+            <div class="last-updated">
+              Last updated on Feb 24, 2023</div>
           </div>
           <div class="right-details">
             <div class="icons">
@@ -392,11 +423,14 @@ button “Import” as follows:</p>
 <li><a class="reference internal" href="#">Using Datasets</a><ul>
 <li><a class="reference internal" href="#create-dataset">Create dataset</a></li>
 <li><a class="reference internal" href="#import-dataset">Import dataset</a><ul>
+<li><a class="reference internal" href="#renex-format">Renex format</a></li>
 <li><a class="reference internal" href="#cvat-image-format">CVAT - Image format</a></li>
 <li><a class="reference internal" href="#cvat-video-format">CVAT - Video format</a></li>
 <li><a class="reference internal" href="#coco-format">COCO format</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#view-edit-delete-share-dataset">View, edit, delete, share dataset</a></li>
+<li><a class="reference internal" href="#transform-dataset">Transform dataset</a></li>
 </ul>
 </li>
 </ul>

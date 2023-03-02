@@ -3,10 +3,11 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Smart Query" href="smart_query.html" /><link rel="prev" title="Using Workspaces" href="using_workspaces.html" />
+
+    <meta property="article:modified_time" content="2023-02-24T04:01:38+00:00" /><link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Smart Query" href="smart_query.html" /><link rel="prev" title="Using Workspaces" href="using_workspaces.html" />
 
     <meta name="generator" content="sphinx-4.5.0, furo 2022.06.21"/>
-        <title>Exploring Datasets - Renex 1.0.8</title>
+        <title>Exploring Datasets - Renex 1.1.0</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
     <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
@@ -126,7 +127,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">Renex 1.0.8</div></a>
+      <a href="../index.html"><div class="brand">Renex 1.1.0</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -149,7 +150,7 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
   
   
-  <span class="sidebar-brand-text">Renex 1.0.8</span>
+  <span class="sidebar-brand-text">Renex 1.1.0</span>
   
 </a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
   <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
@@ -223,22 +224,78 @@
         </div>
         <article role="main">
           
-                <div id="readtime_value" style="display:none">1 min</div>
+                <div id="readtime_value" style="display:none">3 min</div>
               <section id="exploring-datasets">
 <h1>Exploring Datasets<a class="headerlink" href="#exploring-datasets" title="Permalink to this headline">#</a></h1>
 <p>In a workspace, we can explore the dataset in different ways.</p>
 <section id="filter-by-labels">
 <h2>Filter by labels<a class="headerlink" href="#filter-by-labels" title="Permalink to this headline">#</a></h2>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="text-left head"><p></p></th>
+<th class="text-center head"><p></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>Show only (Select) detections as “person” in the “ground_truth”. Then there are 2,693 images with at least one person specified in the “ground_truth”.</p></td>
+<td class="text-center"><p><img alt="" src="../_images/ds_filter1.png" /></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Not show (Exclude) detections as “person” in the “ground_truth”. Then there are 4,934 images with at least one person specified in the “ground_truth”.</p></td>
+<td class="text-center"><p><img alt="" src="../_images/ds_filter2.png" /></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Show 35 images recognized as “ski” with 0.8 &lt;= confidence score &lt;= 0.95.</p></td>
+<td class="text-center"><p><img alt="" src="../_images/ds_filter3.png" /></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Click the eye icon to show only 1 sample with grayscale tag.</p></td>
+<td class="text-center"><p><img alt="" src="../_images/ds_filter4.png" /></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Filter by enter ID or filepath string.</p></td>
+<td class="text-center"><p><img alt="" src="../_images/ds_filter5.png" /></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Click “Sort By Ascending” / “Sort By Descending” to sort samples with the “eval_tp” values in ascending / descending order. Limit the “eval_tp” by changing min, max values on the slider.</p></td>
+<td class="text-center"><p><img alt="" src="../_images/ds_filter6.png" /></p></td>
+</tr>
+</tbody>
+</table>
+</div>
 </section>
-<section id="filter-by-query">
-<h2>Filter by query<a class="headerlink" href="#filter-by-query" title="Permalink to this headline">#</a></h2>
+<section id="smart-query">
+<h2>Smart query<a class="headerlink" href="#smart-query" title="Permalink to this headline">#</a></h2>
 <p>We can filter our dataset by using queries. For more detail, please refer to <a class="reference external" href="smart_query.html">smart query user guide</a></p>
 </section>
 <section id="navigate-views">
 <h2>Navigate views<a class="headerlink" href="#navigate-views" title="Permalink to this headline">#</a></h2>
+<ol class="arabic simple">
+<li><p>Click the bookmark button to apply the filter on the right panel to the current view.
+<img alt="" src="../_images/ds_view1.png" /></p></li>
+<li><p>Click the back button to go back to the previous view. For example: undo the step (1) above.
+<img alt="" src="../_images/ds_view2.png" /></p></li>
+</ol>
 </section>
 <section id="coloring-annotations">
 <h2>Coloring annotations<a class="headerlink" href="#coloring-annotations" title="Permalink to this headline">#</a></h2>
+<div>
+<img src="../_static/img/ds_color_annot1.png" width="30%" class="target">
+</div>
+<p>Switching between color by field and by value:</p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="text-left head"><p>By field</p></th>
+<th class="text-left head"><p>By value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><img src="../_static/img/ds_color_annot2.png" width="80%" class="target"></p></td>
+<td class="text-left"><p><img src="../_static/img/ds_color_annot3.png" width="100%" class="target"></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><img src="../_static/img/ds_color_annot4.png" width="85%" class="target"></p></td>
+<td class="text-left"><p><img src="../_static/img/ds_color_annot5.png" width="100%" class="target"></p></td>
+</tr>
+</tbody>
+</table>
+</div>
 </section>
 </section>
 
@@ -277,7 +334,8 @@
             Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
             
             <a href="https://github.com/pradyunsg/furo">Furo</a>
-            
+            <div class="last-updated">
+              Last updated on Feb 24, 2023</div>
           </div>
           <div class="right-details">
             <div class="icons">
@@ -302,7 +360,7 @@
             <ul>
 <li><a class="reference internal" href="#">Exploring Datasets</a><ul>
 <li><a class="reference internal" href="#filter-by-labels">Filter by labels</a></li>
-<li><a class="reference internal" href="#filter-by-query">Filter by query</a></li>
+<li><a class="reference internal" href="#smart-query">Smart query</a></li>
 <li><a class="reference internal" href="#navigate-views">Navigate views</a></li>
 <li><a class="reference internal" href="#coloring-annotations">Coloring annotations</a></li>
 </ul>
