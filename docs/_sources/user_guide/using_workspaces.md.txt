@@ -1,4 +1,4 @@
-# Using Workspaces
+# Workspaces
 <p id="readtime"></p>
 
 A user can have multiple workspaces to work on different datasets at the same time. Each workspace

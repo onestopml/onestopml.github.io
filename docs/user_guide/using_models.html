@@ -3,11 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
-    <meta property="article:modified_time" content="2023-02-24T04:01:38+00:00" /><link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Models" href="using_models.html" /><link rel="prev" title="Dataset Exploration" href="exploring_datasets.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Quick Start" href="../sdkcli/quickstart.html" /><link rel="prev" title="Smart Query" href="smart_query.html" />
 
     <meta name="generator" content="sphinx-4.5.0, furo 2022.06.21"/>
-        <title>Smart Query - Renex 1.1.0</title>
+        <title>Models - Renex 1.1.0</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
     <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
@@ -138,7 +137,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -166,8 +165,8 @@
 <li class="toctree-l2"><a class="reference internal" href="using_datasets.html">Datasets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="using_workspaces.html">Workspaces</a></li>
 <li class="toctree-l2"><a class="reference internal" href="exploring_datasets.html">Dataset Exploration</a></li>
-<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Smart Query</a></li>
-<li class="toctree-l2"><a class="reference internal" href="using_models.html">Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="smart_query.html">Smart Query</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Models</a></li>
 </ul>
 </li>
 </ul>
@@ -206,7 +205,7 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
@@ -214,88 +213,83 @@
         <article role="main">
           
                 <div id="readtime_value" style="display:none">5 min</div>
-              <section id="smart-query">
-<h1>Smart Query<a class="headerlink" href="#smart-query" title="Permalink to this headline">#</a></h1>
-<p>With smart query, we have a lot of advanced ways to filter and select samples in our dataset.</p>
-<ol class="arabic">
-<li><p>Query Bar</p>
-<p>To query samples with some specific conditions, go to “Query bar” (as shown in <a class="reference external" href="#fig1">Figure 1a</a>) and type some query conditions in Renex query format. The “Query bar” are integrated with autocomplete feature which suggests relevant query strings as shown in <a class="reference external" href="#fig1">Figure 1b</a></p>
-<div class="scalize" id="fig1">
-<img src="../_static/img/smart_query.jpg" class="target">
-<div class="item-point" data-top="33" data-left="15"><div><a href="#" class="toggle">a</a></div></div>
-<div class="item-point" data-top="70" data-left="18"><div><a href="#" class="toggle">b</a></div></div>
-<div class="caption"><span>Figure 1. Renex query bar</span> <a class="headerlink" href="#fig1" title="Permalink to this image">#</a></p></div>
+              <section id="models">
+<h1>Models<a class="headerlink" href="#models" title="Permalink to this headline">#</a></h1>
+<p id="readtime"></p>
+This page is about how to use and manage models and their versions.
+<section id="create-model">
+<h2>Create model<a class="headerlink" href="#create-model" title="Permalink to this headline">#</a></h2>
+<p>To create a new model, go to menu “Models” on the top of the webpage and click “Create Model” and give it a name, must be different from other existing model names.
+After that, go to the model page, enter description and add tags for the model as shown in <a class="reference external" href="#fig1">Figure 1</a>.</p>
+<div class="scalize" id="fig1" width="30%">
+<img src="../_static/img/model_detail.png" class="target">
+<!-- <div class="item-point" data-top="71" data-left="12"><div><a href="#" class="toggle"></a></div></div> -->
+<div class="caption"><span>Figure 1. Model description.</span> <a class="headerlink" href="#fig1" title="Permalink to this image">#</a></p></div>
 </div>
-</li>
-<li><p>Instruction for typing query string</p>
-<p>Query string can be typed manually with the support of auto-suggestion feature.</p>
-<p>For example, type first few characters of sample field and choose suggestion by “Up/Down” key or click left mouse on the correct suggestion. After choose suggestion, press next keyword to go to next suggestion. When finish query string, press “Enter”</p>
-<p>In order to make system work as expected, the query string must have “empty space” between each term in query sentence.</p>
-<div class="table-wrapper colwidths-auto docutils container">
-<table class="colwidths-auto docutils align-default">
-<thead>
-<tr class="row-odd"><th class="text-left head"><p></p></th>
-<th class="text-right head"><p></p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td class="text-left"><p>To find field “ground_truth”, Type “gr” and choose suggestion.</p></td>
-<td class="text-right"><p><img src="../_static/img/smart_query_1.png" width="80%" class="target"></p></td>
-</tr>
-<tr class="row-odd"><td class="text-left"><p>Next type “.”</p></td>
-<td class="text-right"><p><img src="../_static/img/smart_query_2.png" width="80%" class="target"></p></td>
-</tr>
-<tr class="row-even"><td class="text-left"><p>Next to find person, type “per” and choose suggestion.</p></td>
-<td class="text-right"><p><img src="../_static/img/smart_query_3.png" width="80%" class="target"></p></td>
-</tr>
-<tr class="row-odd"><td class="text-left"><p>When complete query sentences, press Enter.</p></td>
-<td class="text-right"><p><img src="../_static/img/smart_query_4.png" width="80%" class="target"></p></td>
-</tr>
-</tbody>
-</table>
+<p>Click “Upload”, then a popup dialog is shown in <a class="reference external" href="#fig2">Figure 2</a> below.</p>
+<div class="scalize" id="fig2">
+<img src="../_static/img/upload_model.png" width="30%" class="target">
+<div class="caption"><span>Figure 2. Upload model and schema dialog.</span> <a class="headerlink" href="#fig2" title="Permalink to this image">#</a></p></div>
 </div>
-</li>
-<li><p>Query samples by its annotation field with single condition</p>
-<p>To query samples with single condition, type query string as below format with corresponding field type:</p>
-<div class="table-wrapper colwidths-auto docutils container">
-<table class="colwidths-auto docutils align-default">
-<thead>
-<tr class="row-odd"><th class="text-left head"><p></p></th>
-<th class="text-right head"><p></p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td class="text-left"><p><strong>Single Classification</strong>:<br /> <code class="docutils literal notranslate"><span class="pre">&lt;sample_field&gt;</span></code> <code class="docutils literal notranslate"><span class="pre">&lt;ops&gt;</span></code> <code class="docutils literal notranslate"><span class="pre">&lt;value&gt;</span></code>.<br /><code class="docutils literal notranslate"><span class="pre">ops</span></code> in <code class="docutils literal notranslate"><span class="pre">{=,</span> <span class="pre">!=}</span></code>.</p></td>
-<td class="text-right"><p><img src="../_static/img/smart_query_5.png" width="80%" class="target"></p></td>
-</tr>
-<tr class="row-odd"><td class="text-left"><p><strong>Multi-label</strong>:<br /> <code class="docutils literal notranslate"><span class="pre">&lt;sample_field.class_name&gt;</span></code> <code class="docutils literal notranslate"><span class="pre">&lt;ops&gt;</span></code> <code class="docutils literal notranslate"><span class="pre">0</span></code>.<br /><code class="docutils literal notranslate"><span class="pre">ops</span></code> in <code class="docutils literal notranslate"><span class="pre">{=,</span> <span class="pre">&gt;}</span></code>.</p></td>
-<td class="text-right"><p><img src="../_static/img/smart_query_6.png" width="80%" class="target"></p></td>
-</tr>
-<tr class="row-even"><td class="text-left"><p><strong>Detection/Polygons/Polylines/Keypoints</strong>:<br /> - By number of objects:<br /><code class="docutils literal notranslate"><span class="pre">&lt;sample_field.count&gt;</span></code> <code class="docutils literal notranslate"><span class="pre">&lt;ops&gt;</span></code> <code class="docutils literal notranslate"><span class="pre">&lt;value&gt;</span></code>.<br /> - By specifying class:<br /><code class="docutils literal notranslate"><span class="pre">&lt;sample_field.class_name&gt;</span></code> <code class="docutils literal notranslate"><span class="pre">&lt;ops&gt;</span></code> <code class="docutils literal notranslate"><span class="pre">&lt;value&gt;</span></code>.<br /> <code class="docutils literal notranslate"><span class="pre">ops</span></code> in <code class="docutils literal notranslate"><span class="pre">{&gt;,</span> <span class="pre">&gt;=,</span> <span class="pre">&lt;,</span> <span class="pre">&lt;=,</span> <span class="pre">=,</span> <span class="pre">!=}</span></code>.</p></td>
-<td class="text-right"><p><img src="../_static/img/smart_query_7.png" width="80%" class="target"><img src="../_static/img/smart_query_8.png" width="80%" class="target"></p></td>
-</tr>
-</tbody>
-</table>
+<p>Upload packed model in a <code class="docutils literal notranslate"><span class="pre">.zip</span></code> file ([TODO] refer to how to pack models document) and fill in the model schema ([TODO] refer to model schema document). For example: you can use the model <a class="reference external" href="https://abc.xyz">intel.zip</a> and schema:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;inputs&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;object&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;properties&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;image_paths&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;local&quot;</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;outputs&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;object&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;properties&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;predictions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;classification&quot;</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
 </div>
-</li>
-<li><p>Query samples by its annotation field with multiple conditions</p>
-<p>To query samples with multiple condition, use AND/OR between query string. Note that query string must be inside round bracket as <code class="docutils literal notranslate"><span class="pre">(</span> <span class="pre">query</span> <span class="pre">string</span> <span class="pre">)</span></code>.</p>
-<p><img alt="" src="../_images/smart_query_9.png" /></p>
-</li>
-<li><p>Query samples by multiple conditions and extra math operations</p>
-<p>The query string can be flexible by adding math operations in right term in usecase you need.</p>
-<p><img alt="" src="../_images/smart_query_10.png" /></p>
-</li>
-<li><p>Query samples by metadata</p>
-<p>Some dataset may have metadata field, we can query sample based on its metadata by type “metadata” in beginning of query string.</p>
-<p><img alt="" src="../_images/smart_query_11.png" /></p>
-</li>
-<li><p>Query samples by other fields</p>
-<p>In order to query sample by other fields (for example: evaluation metrics), first calculate and input the metric value to Renex dataset. Then type query string with sample field as imported evaluation metric.
-For example, query samples which have number of true positive larger than 3.</p>
-<p><img alt="" src="../_images/smart_query_12.png" /></p>
-</li>
-</ol>
+</section>
+<section id="deploy-model">
+<h2>Deploy model<a class="headerlink" href="#deploy-model" title="Permalink to this headline">#</a></h2>
+<p>To deploy a model, click “Deploy”, then a popup dialog is shown in <a class="reference external" href="#fig3">Figure 3</a>. Fill the information as below:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Deploy</span> <span class="pre">Name</span></code> (required): the deployment name.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Model</span> <span class="pre">Type</span></code> (required): default = <code class="docutils literal notranslate"><span class="pre">Inference</span></code>. Please ignore other options for now.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Mini</span> <span class="pre">Batch</span></code> (required): default = <code class="docutils literal notranslate"><span class="pre">1</span></code>. It can be greater if the model supports batch inference, but be aware of memory usage.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Num</span> <span class="pre">Replicas</span></code> (required): default = <code class="docutils literal notranslate"><span class="pre">1</span></code>, the number of model instances to spin-up. It can be greater, but be mindful about the computational resource.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Num</span> <span class="pre">gpus</span></code> (required): default = <code class="docutils literal notranslate"><span class="pre">0</span></code>. Set to <code class="docutils literal notranslate"><span class="pre">1</span></code> if the model can run on GPU. The system does not support multiple GPUs yet.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Environment</span></code> (optional): tick “Install Custom Conda Env” if the model needs to run in separate environment with more packages or other versions.</p></li>
+</ul>
+<div class="scalize" id="fig3">
+<img src="../_static/img/deploy_model.png" width="30%" class="target">
+<!-- <div class="item-point" data-top="71" data-left="26"><div><a href="#" class="toggle"></a></div></div> -->
+<div class="caption"><span>Figure 3. Deploy model dialog</span> <a class="headerlink" href="#fig3" title="Permalink to this image">#</a></p></div>
+</div>
+</section>
+<section id="share-model">
+<h2>Share model<a class="headerlink" href="#share-model" title="Permalink to this headline">#</a></h2>
+<p>Click “Share” to publish model for everyone can run and/or edit. A popup dialog is as in <a class="reference external" href="#fig4">Figure 4</a>.</p>
+<div class="scalize" id="fig4">
+<img src="../_static/img/share_model.png" width="30%" class="target">
+<!-- <div class="item-point" data-top="71" data-left="26"><div><a href="#" class="toggle"></a></div></div> -->
+<div class="caption"><span>Figure 4. Share model.</span> <a class="headerlink" href="#fig4" title="Permalink to this image">#</a></p></div>
+</div>
+</section>
+<section id="run-model">
+<h2>Run model<a class="headerlink" href="#run-model" title="Permalink to this headline">#</a></h2>
+<p>To run model inference on a dataset, view that dataset, and click the submit job button (suitcase icon).
+The popup dialog lets you choose the model (see <a class="reference external" href="#fig5">Figure 5</a>), click “Add” and name/map the model output.
+After the inference finishes, the model output will be added as a field for each sample in the dataset.
+To check the inference progress, open the “Execution” tab in the filter panel on the right handside.</p>
+<div class="scalize" id="fig5">
+<img src="../_static/img/run_model.png" width="30%" class="target">
+<!-- <div class="item-point" data-top="71" data-left="26"><div><a href="#" class="toggle"></a></div></div> -->
+<div class="caption"><span>Figure 5. Run model on a dataset.</span> <a class="headerlink" href="#fig5" title="Permalink to this image">#</a></p></div>
+</div></section>
 </section>
 
           
@@ -304,23 +298,23 @@ For example, query samples which have number of true positive larger than 3.</p>
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="using_models.html">
+          <a class="next-page" href="../sdkcli/quickstart.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Models</div>
+                <div class="title">Quick Start</div>
               </div>
               <svg><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="exploring_datasets.html">
+          <a class="prev-page" href="smart_query.html">
               <svg><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Dataset Exploration</div>
+                <div class="title">Smart Query</div>
                 
               </div>
             </a>
@@ -333,8 +327,7 @@ For example, query samples which have number of true positive larger than 3.</p>
             Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
             
             <a href="https://github.com/pradyunsg/furo">Furo</a>
-            <div class="last-updated">
-              Last updated on Feb 24, 2023</div>
+            
           </div>
           <div class="right-details">
             <div class="icons">
@@ -345,8 +338,30 @@ For example, query samples which have number of true positive larger than 3.</p>
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            Contents
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Models</a><ul>
+<li><a class="reference internal" href="#create-model">Create model</a></li>
+<li><a class="reference internal" href="#deploy-model">Deploy model</a></li>
+<li><a class="reference internal" href="#share-model">Share model</a></li>
+<li><a class="reference internal" href="#run-model">Run model</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>

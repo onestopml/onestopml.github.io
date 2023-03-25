@@ -4,10 +4,10 @@
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <meta property="article:modified_time" content="2023-02-24T04:01:38+00:00" /><link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Using Workspaces" href="using_workspaces.html" /><link rel="prev" title="User Guide" href="index.html" />
+    <meta property="article:modified_time" content="2023-02-24T04:01:38+00:00" /><link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Workspaces" href="using_workspaces.html" /><link rel="prev" title="User Guide" href="index.html" />
 
     <meta name="generator" content="sphinx-4.5.0, furo 2022.06.21"/>
-        <title>Using Datasets - Renex 1.1.0</title>
+        <title>Datasets - Renex 1.1.0</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
     <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
@@ -163,31 +163,20 @@
 <li class="toctree-l1"><a class="reference internal" href="../release.html">Release Notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../concepts.html">Core Concepts</a></li>
 <li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">User Guide</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
-<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Using Datasets</a></li>
-<li class="toctree-l2"><a class="reference internal" href="using_workspaces.html">Using Workspaces</a></li>
-<li class="toctree-l2"><a class="reference internal" href="exploring_datasets.html">Exploring Datasets</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Datasets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="using_workspaces.html">Workspaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exploring_datasets.html">Dataset Exploration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="smart_query.html">Smart Query</a></li>
+<li class="toctree-l2"><a class="reference internal" href="using_models.html">Models</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../use_cases/index.html">Use Cases</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">SDK/CLI Reference</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../sdkcli/quickstart.html">Quick Start</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../sdkcli/basic.html">Basic Usage</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../sdkcli/datasets/index.html">Working with Datasets</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../sdkcli/datasets/reference.html">Datasets Reference</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../sdkcli/models/index.html">Working with Models</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../sdkcli/models/reference.html">Models Reference</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../sdkcli/workspaces/index.html">Working with Workspaces</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../sdkcli/workspaces/reference.html">Workspaces Reference</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../sdkcli/advanced/index.html">Advanced Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sdkcli/datasets/index.html">Working with Datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sdkcli/models/index.html">Working with Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sdkcli/workspaces/index.html">Working with Workspaces</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../sdkcli/changelog.html">Changelog</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../sdkcli/license.html">License</a></li>
 </ul>
@@ -225,8 +214,8 @@
         <article role="main">
           
                 <div id="readtime_value" style="display:none">6 min</div>
-              <section id="using-datasets">
-<h1>Using Datasets<a class="headerlink" href="#using-datasets" title="Permalink to this headline">#</a></h1>
+              <section id="datasets">
+<h1>Datasets<a class="headerlink" href="#datasets" title="Permalink to this headline">#</a></h1>
 <p id="readtime"></p>
 This page is about how to use and manage datasets.
 <section id="create-dataset">
@@ -372,7 +361,7 @@ button “Import” as follows:</p>
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Using Workspaces</div>
+                <div class="title">Workspaces</div>
               </div>
               <svg><use href="#svg-arrow-right"></use></svg>
             </a>
@@ -391,7 +380,7 @@ button “Import” as follows:</p>
         <div class="bottom-of-page">
           <div class="left-details">
             <div class="copyright">
-                Copyright &#169; 2022, VinAI
+                Copyright &#169; 2023, VinAI
             </div>
             Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
             
@@ -420,7 +409,7 @@ button “Import” as follows:</p>
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">Using Datasets</a><ul>
+<li><a class="reference internal" href="#">Datasets</a><ul>
 <li><a class="reference internal" href="#create-dataset">Create dataset</a></li>
 <li><a class="reference internal" href="#import-dataset">Import dataset</a><ul>
 <li><a class="reference internal" href="#renex-format">Renex format</a></li>

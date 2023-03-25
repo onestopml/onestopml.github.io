@@ -19,18 +19,15 @@ Welcome to Renex
     release
     concepts
     user_guide/index
-    use_cases/index
 
 .. toctree::
     :caption: SDK/CLI Reference
     :hidden:
 
     sdkcli/quickstart
-    sdkcli/basic
     sdkcli/datasets/index
     sdkcli/models/index
     sdkcli/workspaces/index
-    sdkcli/advanced/index
     sdkcli/changelog
     sdkcli/license
 

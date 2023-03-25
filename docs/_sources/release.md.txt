@@ -1,1 +1,87 @@
 # Release Notes 
+
+## v1.1.0
+
+- Support sending multiple annotation fields in annotation connectivity component.
+- Run and manage tasks using Airflow.
+- Speed-up dataset transformation in task management.
+
+- Data synthesis:
+  - Render single video and generate many videos.
+  - Import datasets for object gallery.
+  - Support cut & paste dynamic objects.
+  - Cut-paste objects to specific layers in z-axis of a single frame.
+  - Update to the latest version of datasyn including minimap, location interpolation, context menu.
+  - Manage objects by layers.
+  - Import sample to object bank after transformation.
+  - Add minimap, and support object handling.
+  - Flip object and rotation direction for car wheels.
+  - Control parameters for rotation and motion blur.
+  - Support reverse the wheel.
+  - Add color picker and transfer.
+  - Many bug-fixes and improvements.
+
+- Renex:
+  - Filter dataset by ID.
+  - Press spacebar to select sample
+  - Transform dataset to night vision and fisheye.
+  - Support Python SDK for video data.
+  - Support Datasyn APIs from Renex.
+  - Support adding samples concurrently to dataset.
+  - Support adding segmentation annotation and adding video sample.
+  - [CICD] Auto web app test pipeline, e.g, import datasets.
+  - Many bug-fixes and improvements.
+
+## v1.0.9
+- Refactor Dataset and Workspaces table views.
+- Highly customizable inputs and parameters for model inference.
+- Improve UI/UX for Smart Query and Smart Search.
+- Redesign UI for dataset management page.
+- Add more functions for tagging samples.
+- Improve user profile page and indicate media type.
+- Update user manual.
+- Speed-up dataset page.
+- Show line charts for video if available.
+- Support RestAPIs for video data.
+- Some bug-fixes and improvements.
+
+## v1.0.8
+- Support client credential login for SDK.
+- Add data deduplication feature.
+- Support temporal detection, clips, events labels in Renex format.
+- Some bug-fixes and stability improvements.
+
+## v1.0.7
+- Allow to enter numbers to range slider.
+- Allow to restart workspaces.
+- Rename, delete annotation and prediction names.
+- Some bug-fixes and improvements.
+
+## v1.0.6
+- Support Model Registry APIs in Python SDKs for Client Package v0.2.
+- Add the front-end query bar and back-end for natural text query.
+- Enable sending annotation tasks to custom CVAT engine.
+
+## v1.0.5
+- Support video-level evaluation.
+
+## v1.0.4
+- Support dataset, workspace in Python SDK.
+- Auto shutdown spare workspaces.
+- Support GPU executor for model inference.
+- Add dropdown sample tag list when adding samples to another dataset.
+- Select all samples having a tag while still viewing all dataset.
+- View samples while being in selection mode.
+
+## v1.0.3
+- SDK supports generic collections.
+- Improve UI/UX and fix bugs.
+
+## v1.0.2
+- Add media type and extensions when submitting job to Executor.
+- Calculate evaluation results on the current view.
+- Support clone and merge datasets.
+## v1.0.1
+- Store embeddings for a dataset.
+- Calculate low-dimension points for embedding feature (tsne, pca, umap, ..)
+- Add optional new sample field for annotation job.

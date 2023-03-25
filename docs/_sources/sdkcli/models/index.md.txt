@@ -1,7 +1,136 @@
 # Working with Models
+<p id="readtime"></p>
+Each user can manage their models and permissions (keeping private or sharing to everyone).
+A model could be shipped with its own description, tags and multiple versions.
+Each version also contains its own information such as description, tags and the **schema**. To start, we do:
 
-```{toctree}
+````{tab} Python
+```python
+import renex
+import logging
+import pprint 
+pp = pprint.PrettyPrinter(indent=4)
+
+logging.getLogger('renex').setLevel(logging.INFO)
+
+renex.init(username='####', password='####', host='http://localhost:9000')
+```
+````
+
+````{tab} CLI
+```bash
+We will support later
+```
+````
+
+## List models
+The object `renex.models` contains all of your models. It is a dictionary-like object,
+thus we can get walk-through as following:
+
+````{tab} Python
+```python
+print('Number of models:', len(renex.models))
+for name, model in renex.models.items():
+    print('=' * 40)
+    print('model name:', name)
+    print(model.json())
+```
+````
+
+````{tab} CLI
+```bash
+We will support later
+```
+````
+
+## Get model by name
+````{tab} Python
+```python
+
+# Pull model information if not done it yet.
+renex.models.pull(force=True)
+
+# then
+model = renex.models['renex_user_1__intel']
+
+# Start pull all details of the model when accessing the attributes.
+model.description
+
+# Modify model's description.
+model.description = model.description + ' modified'
+model.push()
+```
+````
+````{tab} CLI
+```bash
+We will support later
+```
+````
+
+## Create a new model
+
+````{tab} Python
+```python
+model = renex.RegisteredModel()
+model.name = 'new_test_model'
+model.description = 'test model'
+model.push()
+renex.models.pull(force=True)
+renex.models
+```
+````
+````{tab} CLI
+```bash
+We will support later
+```
+````
+
+## Upload model version
+
+````{tab} Python
+```python
+model.upload('./example_data/intel.zip')
+```
+````
+````{tab} CLI
+```bash
+We will support later
+```
+````
+
+## Delete model
+
+````{tab} Python
+```python
+renex.models['renex_user_1__new_test_model'].delete()
+renex.models.pull(force=True)
+```
+````
+````{tab} CLI
+```bash
+We will support later
+```
+````
+
+## Deploy model
+````{tab} Python
+```python
+model.deploy('model_dep-name')
+
+# Get all deployed models
+renex.deployed_models.pull()
+for deployment_name, deployment in renex.deployed_models.items():
+    print(f"{deployment.name}: {deployment.dict()}")
+```
+````
+````{tab} CLI
+```bash
+We will support later
+```
+````
+
+<!-- ```{toctree}
 :hidden:
 reference
-```
+``` -->
 

@@ -1,4 +1,4 @@
-# Using Datasets
+# Datasets
 <p id="readtime"></p>
 This page is about how to use and manage datasets.
 

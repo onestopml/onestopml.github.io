@@ -138,7 +138,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -163,31 +163,20 @@
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Release Notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="concepts.html">Core Concepts</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="user_guide/index.html">User Guide</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="user_guide/using_datasets.html">Using Datasets</a></li>
-<li class="toctree-l2"><a class="reference internal" href="user_guide/using_workspaces.html">Using Workspaces</a></li>
-<li class="toctree-l2"><a class="reference internal" href="user_guide/exploring_datasets.html">Exploring Datasets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/using_datasets.html">Datasets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/using_workspaces.html">Workspaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/exploring_datasets.html">Dataset Exploration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="user_guide/smart_query.html">Smart Query</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/using_models.html">Models</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="use_cases/index.html">Use Cases</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">SDK/CLI Reference</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="sdkcli/quickstart.html">Quick Start</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sdkcli/basic.html">Basic Usage</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="sdkcli/datasets/index.html">Working with Datasets</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="sdkcli/datasets/reference.html">Datasets Reference</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="sdkcli/models/index.html">Working with Models</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="sdkcli/models/reference.html">Models Reference</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="sdkcli/workspaces/index.html">Working with Workspaces</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="sdkcli/workspaces/reference.html">Workspaces Reference</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="sdkcli/advanced/index.html">Advanced Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sdkcli/datasets/index.html">Working with Datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sdkcli/models/index.html">Working with Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sdkcli/workspaces/index.html">Working with Workspaces</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sdkcli/changelog.html">Changelog</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sdkcli/license.html">License</a></li>
 </ul>
@@ -217,16 +206,136 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main">
           
-                <div id="readtime_value" style="display:none">1 min</div>
+                <div id="readtime_value" style="display:none">4 min</div>
               <section id="release-notes">
 <h1>Release Notes<a class="headerlink" href="#release-notes" title="Permalink to this headline">#</a></h1>
+<section id="v1-1-0">
+<h2>v1.1.0<a class="headerlink" href="#v1-1-0" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Support sending multiple annotation fields in annotation connectivity component.</p></li>
+<li><p>Run and manage tasks using Airflow.</p></li>
+<li><p>Speed-up dataset transformation in task management.</p></li>
+<li><p>Data synthesis:</p>
+<ul>
+<li><p>Render single video and generate many videos.</p></li>
+<li><p>Import datasets for object gallery.</p></li>
+<li><p>Support cut &amp; paste dynamic objects.</p></li>
+<li><p>Cut-paste objects to specific layers in z-axis of a single frame.</p></li>
+<li><p>Update to the latest version of datasyn including minimap, location interpolation, context menu.</p></li>
+<li><p>Manage objects by layers.</p></li>
+<li><p>Import sample to object bank after transformation.</p></li>
+<li><p>Add minimap, and support object handling.</p></li>
+<li><p>Flip object and rotation direction for car wheels.</p></li>
+<li><p>Control parameters for rotation and motion blur.</p></li>
+<li><p>Support reverse the wheel.</p></li>
+<li><p>Add color picker and transfer.</p></li>
+<li><p>Many bug-fixes and improvements.</p></li>
+</ul>
+</li>
+<li><p>Renex:</p>
+<ul>
+<li><p>Filter dataset by ID.</p></li>
+<li><p>Press spacebar to select sample</p></li>
+<li><p>Transform dataset to night vision and fisheye.</p></li>
+<li><p>Support Python SDK for video data.</p></li>
+<li><p>Support Datasyn APIs from Renex.</p></li>
+<li><p>Support adding samples concurrently to dataset.</p></li>
+<li><p>Support adding segmentation annotation and adding video sample.</p></li>
+<li><p>[CICD] Auto web app test pipeline, e.g, import datasets.</p></li>
+<li><p>Many bug-fixes and improvements.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="v1-0-9">
+<h2>v1.0.9<a class="headerlink" href="#v1-0-9" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Refactor Dataset and Workspaces table views.</p></li>
+<li><p>Highly customizable inputs and parameters for model inference.</p></li>
+<li><p>Improve UI/UX for Smart Query and Smart Search.</p></li>
+<li><p>Redesign UI for dataset management page.</p></li>
+<li><p>Add more functions for tagging samples.</p></li>
+<li><p>Improve user profile page and indicate media type.</p></li>
+<li><p>Update user manual.</p></li>
+<li><p>Speed-up dataset page.</p></li>
+<li><p>Show line charts for video if available.</p></li>
+<li><p>Support RestAPIs for video data.</p></li>
+<li><p>Some bug-fixes and improvements.</p></li>
+</ul>
+</section>
+<section id="v1-0-8">
+<h2>v1.0.8<a class="headerlink" href="#v1-0-8" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Support client credential login for SDK.</p></li>
+<li><p>Add data deduplication feature.</p></li>
+<li><p>Support temporal detection, clips, events labels in Renex format.</p></li>
+<li><p>Some bug-fixes and stability improvements.</p></li>
+</ul>
+</section>
+<section id="v1-0-7">
+<h2>v1.0.7<a class="headerlink" href="#v1-0-7" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Allow to enter numbers to range slider.</p></li>
+<li><p>Allow to restart workspaces.</p></li>
+<li><p>Rename, delete annotation and prediction names.</p></li>
+<li><p>Some bug-fixes and improvements.</p></li>
+</ul>
+</section>
+<section id="v1-0-6">
+<h2>v1.0.6<a class="headerlink" href="#v1-0-6" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Support Model Registry APIs in Python SDKs for Client Package v0.2.</p></li>
+<li><p>Add the front-end query bar and back-end for natural text query.</p></li>
+<li><p>Enable sending annotation tasks to custom CVAT engine.</p></li>
+</ul>
+</section>
+<section id="v1-0-5">
+<h2>v1.0.5<a class="headerlink" href="#v1-0-5" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Support video-level evaluation.</p></li>
+</ul>
+</section>
+<section id="v1-0-4">
+<h2>v1.0.4<a class="headerlink" href="#v1-0-4" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Support dataset, workspace in Python SDK.</p></li>
+<li><p>Auto shutdown spare workspaces.</p></li>
+<li><p>Support GPU executor for model inference.</p></li>
+<li><p>Add dropdown sample tag list when adding samples to another dataset.</p></li>
+<li><p>Select all samples having a tag while still viewing all dataset.</p></li>
+<li><p>View samples while being in selection mode.</p></li>
+</ul>
+</section>
+<section id="v1-0-3">
+<h2>v1.0.3<a class="headerlink" href="#v1-0-3" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>SDK supports generic collections.</p></li>
+<li><p>Improve UI/UX and fix bugs.</p></li>
+</ul>
+</section>
+<section id="v1-0-2">
+<h2>v1.0.2<a class="headerlink" href="#v1-0-2" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Add media type and extensions when submitting job to Executor.</p></li>
+<li><p>Calculate evaluation results on the current view.</p></li>
+<li><p>Support clone and merge datasets.</p></li>
+</ul>
+</section>
+<section id="v1-0-1">
+<h2>v1.0.1<a class="headerlink" href="#v1-0-1" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Store embeddings for a dataset.</p></li>
+<li><p>Calculate low-dimension points for embedding feature (tsne, pca, umap, ..)</p></li>
+<li><p>Add optional new sample field for annotation job.</p></li>
+</ul>
+</section>
 </section>
 
           
@@ -259,7 +368,7 @@
         <div class="bottom-of-page">
           <div class="left-details">
             <div class="copyright">
-                Copyright &#169; 2022, VinAI
+                Copyright &#169; 2023, VinAI
             </div>
             Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
             
@@ -276,8 +385,36 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            Contents
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Release Notes</a><ul>
+<li><a class="reference internal" href="#v1-1-0">v1.1.0</a></li>
+<li><a class="reference internal" href="#v1-0-9">v1.0.9</a></li>
+<li><a class="reference internal" href="#v1-0-8">v1.0.8</a></li>
+<li><a class="reference internal" href="#v1-0-7">v1.0.7</a></li>
+<li><a class="reference internal" href="#v1-0-6">v1.0.6</a></li>
+<li><a class="reference internal" href="#v1-0-5">v1.0.5</a></li>
+<li><a class="reference internal" href="#v1-0-4">v1.0.4</a></li>
+<li><a class="reference internal" href="#v1-0-3">v1.0.3</a></li>
+<li><a class="reference internal" href="#v1-0-2">v1.0.2</a></li>
+<li><a class="reference internal" href="#v1-0-1">v1.0.1</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>

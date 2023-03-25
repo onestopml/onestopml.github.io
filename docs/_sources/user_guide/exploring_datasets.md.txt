@@ -1,4 +1,4 @@
-# Exploring Datasets
+# Dataset Exploration
 In a workspace, we can explore the dataset in different ways. 
 ### Filter by labels
 |      |           |

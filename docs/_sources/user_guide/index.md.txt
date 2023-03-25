@@ -7,4 +7,5 @@ using_datasets
 using_workspaces
 exploring_datasets
 smart_query
+using_models
 ```
