@@ -10,6 +10,7 @@ Welcome to Renex
 
 *Renex platform speeds up the continuous improvement process for data quality and model performance*
 
+Please fill in `this Google form <https://forms.gle/NuaWafURCxRSECrq9>`_ to gain the access.
 
 
 .. toctree::

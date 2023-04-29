@@ -1,0 +1,75 @@
+# Models
+<p id="readtime"></p>
+This page is about how to use and manage models and their versions.
+
+## Create model
+To create a new model, go to menu "Models" on the top of the webpage and click "Create Model" and give it a name, must be different from other existing model names.
+After that, go to the model page, enter description and add tags for the model as shown in [Figure 1](#fig1).
+<div class="scalize" id="fig1" width="30%">
+<img src="../_static/img/model_detail.png" class="target">
+<!-- <div class="item-point" data-top="71" data-left="12"><div><a href="#" class="toggle"></a></div></div> -->
+<div class="caption"><span>Figure 1. Model description.</span> <a class="headerlink" href="#fig1" title="Permalink to this image">#</a></p></div>
+</div>
+
+Click "Upload", then a popup dialog is shown in [Figure 2](#fig2) below.
+<div class="scalize" id="fig2">
+<img src="../_static/img/upload_model.png" width="30%" class="target">
+<div class="caption"><span>Figure 2. Upload model and schema dialog.</span> <a class="headerlink" href="#fig2" title="Permalink to this image">#</a></p></div>
+</div>
+
+Upload packed model in a `.zip` file ([TODO] refer to how to pack models document) and fill in the model schema ([TODO] refer to model schema document). For example: you can use the model [intel.zip](https://abc.xyz) and schema:
+```json
+{
+  "inputs": {
+    "type": "object",
+    "properties": {
+      "image_paths": {
+        "type": "local"
+      }
+    }
+  },
+  "outputs": {
+    "type": "object",
+    "properties": {
+      "predictions": {
+        "type": "classification"
+      }
+    }
+  }
+}
+```
+
+## Deploy model
+To deploy a model, click "Deploy", then a popup dialog is shown in [Figure 3](#fig3). Fill the information as below:
+- `Deploy Name` (required): the deployment name.
+- `Model Type` (required): default = `Inference`. Please ignore other options for now.
+- `Mini Batch` (required): default = `1`. It can be greater if the model supports batch inference, but be aware of memory usage.
+- `Num Replicas` (required): default = `1`, the number of model instances to spin-up. It can be greater, but be mindful about the computational resource.
+- `Num gpus` (required): default = `0`. Set to `1` if the model can run on GPU. The system does not support multiple GPUs yet.
+- `Environment` (optional): tick "Install Custom Conda Env" if the model needs to run in separate environment with more packages or other versions.
+
+<div class="scalize" id="fig3">
+<img src="../_static/img/deploy_model.png" width="30%" class="target">
+<!-- <div class="item-point" data-top="71" data-left="26"><div><a href="#" class="toggle"></a></div></div> -->
+<div class="caption"><span>Figure 3. Deploy model dialog</span> <a class="headerlink" href="#fig3" title="Permalink to this image">#</a></p></div>
+</div>
+
+## Share model
+Click "Share" to publish model for everyone can run and/or edit. A popup dialog is as in [Figure 4](#fig4).
+<div class="scalize" id="fig4">
+<img src="../_static/img/share_model.png" width="30%" class="target">
+<!-- <div class="item-point" data-top="71" data-left="26"><div><a href="#" class="toggle"></a></div></div> -->
+<div class="caption"><span>Figure 4. Share model.</span> <a class="headerlink" href="#fig4" title="Permalink to this image">#</a></p></div>
+</div>
+
+## Run model
+To run model inference on a dataset, view that dataset, and click the submit job button (suitcase icon).
+The popup dialog lets you choose the model (see [Figure 5](#fig5)), click "Add" and name/map the model output.
+After the inference finishes, the model output will be added as a field for each sample in the dataset.
+To check the inference progress, open the "Execution" tab in the filter panel on the right handside.
+
+<div class="scalize" id="fig5">
+<img src="../_static/img/run_model.png" width="30%" class="target">
+<!-- <div class="item-point" data-top="71" data-left="26"><div><a href="#" class="toggle"></a></div></div> -->
+<div class="caption"><span>Figure 5. Run model on a dataset.</span> <a class="headerlink" href="#fig5" title="Permalink to this image">#</a></p></div>
+</div>
